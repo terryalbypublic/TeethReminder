@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Set Time-->
         <scene sceneID="IuO-MN-j02">
             <objects>
-                <viewController id="IHq-sh-dld" sceneMemberID="viewController">
+                <viewController id="IHq-sh-dld" customClass="SetTimeViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sdc-IH-uPq"/>
                         <viewControllerLayoutGuide type="bottom" id="Q6T-h6-hja"/>
@@ -24,16 +24,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-Jk-ssT">
-                                <rect key="frame" x="302" y="161" width="298" height="216"/>
+                                <rect key="frame" x="200" y="161" width="200" height="216"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
-                                <rect key="frame" x="0.0" y="161" width="318" height="216"/>
+                                <rect key="frame" x="0.0" y="161" width="200" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Set Time" id="Iwa-pC-DZe">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RyM-oJ-tcw"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="hoursPicker" destination="RsL-MH-1f1" id="A8L-pP-xWA"/>
+                        <outlet property="minutesPicker" destination="LVf-Jk-ssT" id="e0z-IQ-Adq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXi-Jl-8nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +50,7 @@
         <scene sceneID="NEj-TC-PQh">
             <objects>
                 <tableViewController title="Teeth Reminders" id="ayQ-vF-cuE" customClass="RemindersTableViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="OeD-pZ-cfG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="OeD-pZ-cfG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,7 +92,7 @@
                             <outlet property="delegate" destination="ayQ-vF-cuE" id="Q3i-iq-DPF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="n56-iF-Vyv"/>
+                    <navigationItem key="navigationItem" title="My Reminders" id="n56-iF-Vyv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2I-uH-0zQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

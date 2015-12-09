@@ -16,6 +16,7 @@ class RemindersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         fillReminders()
 
         // Uncomment the following line to preserve selection between presentations
