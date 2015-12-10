@@ -10,14 +10,12 @@ import UIKit
 
 public class Reminder: NSObject {
     
-    public var datetime : NSDate
-    public var name : String
-    public var isActive : Bool
+    public var datetime : NSDate = NSDate()
+    public var name : String = String()
+    public var isActive : Bool = false
     
-    override init(){
-        datetime = NSDate()
-        name = "Reminder 1"
-        isActive = true
+    override public init(){
+        super.init()
     }
     
     required public init(coder aDecoder: NSCoder) {
@@ -36,8 +34,42 @@ public class Reminder: NSObject {
 
 public class ReminderList: NSObject{
     
+    public static let sharedInstance = ReminderList()
     public var reminders : Array<Reminder> = []
     
+    public func setInitialValues(){
+        
+        self.deserialize()
+        
+        if(reminders.count > 0){
+            return;
+        }
+        
+        let reminder1 = Reminder()
+        
+        reminder1.datetime = NSDate()
+        reminder1.name = "Reminder1"
+        reminder1.isActive = false
+        
+        let reminder2 = Reminder()
+        
+        reminder2.datetime = NSDate()
+        reminder2.name = "Reminder2"
+        reminder2.isActive = false
+        
+        let reminder3 = Reminder()
+        
+        reminder3.datetime = NSDate()
+        reminder3.name = "Reminder3"
+        reminder3.isActive = false
+        
+        self.reminders.append(reminder1)
+        self.reminders.append(reminder2)
+        self.reminders.append(reminder3)
+        
+        serializeAndSave()
+        
+    }
     
     public func deserialize(){
         

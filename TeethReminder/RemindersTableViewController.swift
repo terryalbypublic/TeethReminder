@@ -10,7 +10,7 @@ import UIKit
 
 class RemindersTableViewController: UITableViewController {
 
-    var reminderList = ReminderList()
+    var reminderList = ReminderList.sharedInstance
     var reminders = Array<Reminder>()
     
     override func viewDidLoad() {
@@ -27,7 +27,6 @@ class RemindersTableViewController: UITableViewController {
     }
     
     func fillReminders(){
-        reminderList = ReminderList()
         reminderList.deserialize()
         reminders = reminderList.reminders
     }
