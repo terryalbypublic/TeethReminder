@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-0o-VSu">
-                                <rect key="frame" x="30" y="115" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="30" y="81" width="123" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -34,12 +34,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Set Time" id="Iwa-pC-DZe">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="RyM-oJ-tcw"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="RyM-oJ-tcw">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="IHq-sh-dld" id="dSp-7W-XVr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="hoursPicker" destination="RsL-MH-1f1" id="A8L-pP-xWA"/>
                         <outlet property="minutesPicker" destination="LVf-Jk-ssT" id="e0z-IQ-Adq"/>
+                        <outlet property="saveButton" destination="RyM-oJ-tcw" id="eM4-WS-a6O"/>
+                        <outlet property="textLabel" destination="6lR-0o-VSu" id="llT-vA-fUs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXi-Jl-8nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
