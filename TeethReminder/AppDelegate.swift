@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ReminderList.sharedInstance.setInitialValues()
         
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+
+        
         return true
     }
 

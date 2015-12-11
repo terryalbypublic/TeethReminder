@@ -106,6 +106,24 @@ public class ReminderList: NSObject{
         let data = NSKeyedArchiver.archivedDataWithRootObject(reminders)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(data, forKey: "userdata")
+        
+        // remove all old scheduled notifications
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
+        // add the new one
+        for reminder in reminders{
+            if(reminder.isActive){
+                let localNotification = UILocalNotification()
+                localNotification.fireDate = reminder.datetime
+                localNotification.alertBody = "Wash the teeth !!"
+                localNotification.repeatInterval = .Day
+                localNotification.timeZone = NSTimeZone.defaultTimeZone()
+                localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+                
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            }
+        }
+        
     }
     
     
