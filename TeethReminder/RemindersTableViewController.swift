@@ -26,9 +26,19 @@ class RemindersTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false)
+        self.tableView.reloadData()
+    }
+    
     func fillReminders(){
         reminderList.deserialize()
         reminders = reminderList.reminders
+    }
+    
+    func setReminderActive(isActive: Bool, index: Int){
+        reminders[index].isActive = isActive
+        reminderList.serializeAndSave()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,10 +62,10 @@ class RemindersTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! TableViewCell
 
-        
+        cell.index = indexPath.row
         cell.name.text = reminders[indexPath.row].name
-        cell.isActive.selected = reminders[indexPath.row].isActive
-        
+        cell.isActive.setOn(reminders[indexPath.row].isActive, animated: false)
+        cell.time.text = reminders[indexPath.row].time()
         
         // Configure the cell...
 

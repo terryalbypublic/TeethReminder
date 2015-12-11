@@ -13,6 +13,7 @@ public class Reminder: NSObject {
     public var datetime : NSDate = NSDate()
     public var name : String = String()
     public var isActive : Bool = false
+    let calendar = NSCalendar.currentCalendar()
     
     override public init(){
         super.init()
@@ -28,6 +29,13 @@ public class Reminder: NSObject {
         aCoder.encodeBool(isActive, forKey: "IsActive")
         aCoder.encodeObject(name, forKey: "Name")
         aCoder.encodeObject(datetime, forKey: "Datetime")
+    }
+    
+    public func time() ->String{
+        let date = self.datetime
+        let components = calendar.components([.Hour, .Minute], fromDate: date)
+        
+        return String(components.hour)+":"+String(components.minute)
     }
 }
 
@@ -70,6 +78,8 @@ public class ReminderList: NSObject{
         serializeAndSave()
         
     }
+    
+
     
     public func deserialize(){
         

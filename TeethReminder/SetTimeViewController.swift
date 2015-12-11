@@ -24,7 +24,6 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.minutesPicker.delegate = self
         self.hoursPicker.delegate = self
         self.minutesPicker.dataSource = self

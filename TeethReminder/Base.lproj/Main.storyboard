@@ -82,13 +82,16 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-ba-5Lv">
                                             <rect key="frame" x="353" y="21" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchButtonTapped:" destination="Dvd-Qj-LrJ" eventType="valueChanged" id="hkx-m4-766"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="isActive" destination="qlU-ba-5Lv" id="emu-5r-z7Q"/>
                                     <outlet property="name" destination="occ-fF-SxP" id="Uw2-7p-6FH"/>
-                                    <outlet property="time" destination="FqZ-bP-7ff" id="OPt-rD-arW"/>
+                                    <outlet property="time" destination="e8B-Yp-OYI" id="lju-r8-ngk"/>
                                     <segue destination="IHq-sh-dld" kind="show" id="k3x-Y9-iRf"/>
                                 </connections>
                             </tableViewCell>

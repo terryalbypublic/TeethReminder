@@ -8,20 +8,26 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    @IBOutlet weak var time: UIView!
+public class TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var isActive: UISwitch!
-
-    override func awakeFromNib() {
+    public var index  : Int = 0
+    
+    public override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    public override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
+    @IBAction func switchButtonTapped(sender: AnyObject) {
+        ReminderList.sharedInstance.reminders[index].isActive = isActive.on
+        ReminderList.sharedInstance.serializeAndSave()
+    }
 }
