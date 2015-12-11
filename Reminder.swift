@@ -35,7 +35,14 @@ public class Reminder: NSObject {
         let date = self.datetime
         let components = calendar.components([.Hour, .Minute], fromDate: date)
         
-        return String(components.hour)+":"+String(components.minute)
+        var zero = ""
+        
+        if(components.minute<10){
+            zero = "0"
+        }
+        
+        
+        return String(components.hour)+":"+zero+String(components.minute)
     }
 }
 
