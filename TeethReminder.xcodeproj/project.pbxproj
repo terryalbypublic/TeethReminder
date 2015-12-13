@@ -13,6 +13,9 @@
 		6507A1271C15906E00E6228F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6507A1251C15906E00E6228F /* LaunchScreen.storyboard */; };
 		6507A1321C15906F00E6228F /* TeethReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507A1311C15906F00E6228F /* TeethReminderTests.swift */; };
 		6507A13D1C15906F00E6228F /* TeethReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507A13C1C15906F00E6228F /* TeethReminderUITests.swift */; };
+		6527827B1C1E271400C90540 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527827A1C1E271400C90540 /* HelpTableViewController.swift */; };
+		6527827C1C1E271400C90540 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527827A1C1E271400C90540 /* HelpTableViewController.swift */; };
+		6527827D1C1E271400C90540 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527827A1C1E271400C90540 /* HelpTableViewController.swift */; };
 		652824BA1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652824B91C1631D50017A7FF /* RemindersTableViewController.swift */; };
 		652824BB1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652824B91C1631D50017A7FF /* RemindersTableViewController.swift */; };
 		652824BC1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652824B91C1631D50017A7FF /* RemindersTableViewController.swift */; };
@@ -57,6 +60,7 @@
 		6507A1381C15906F00E6228F /* TeethReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeethReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6507A13C1C15906F00E6228F /* TeethReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeethReminderUITests.swift; sourceTree = "<group>"; };
 		6507A13E1C15906F00E6228F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6527827A1C1E271400C90540 /* HelpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewController.swift; sourceTree = "<group>"; };
 		652824B91C1631D50017A7FF /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
 		652824BD1C1636D20017A7FF /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = ../Reminder.swift; sourceTree = "<group>"; };
 		652824C11C163D100017A7FF /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				6507A1251C15906E00E6228F /* LaunchScreen.storyboard */,
 				6507A1281C15906E00E6228F /* Info.plist */,
 				652824C51C1881270017A7FF /* SetTimeViewController.swift */,
+				6527827A1C1E271400C90540 /* HelpTableViewController.swift */,
 			);
 			path = TeethReminder;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			files = (
 				652824C61C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				652824BE1C1636D20017A7FF /* Reminder.swift in Sources */,
+				6527827B1C1E271400C90540 /* HelpTableViewController.swift in Sources */,
 				652824C21C163D100017A7FF /* TableViewCell.swift in Sources */,
 				6507A11D1C15906E00E6228F /* AppDelegate.swift in Sources */,
 				652824BA1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */,
@@ -288,6 +294,7 @@
 			files = (
 				652824C71C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				652824BF1C1636D20017A7FF /* Reminder.swift in Sources */,
+				6527827C1C1E271400C90540 /* HelpTableViewController.swift in Sources */,
 				652824C31C163D100017A7FF /* TableViewCell.swift in Sources */,
 				6507A1321C15906F00E6228F /* TeethReminderTests.swift in Sources */,
 				652824BB1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */,
@@ -300,6 +307,7 @@
 			files = (
 				652824C81C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				652824C01C1636D20017A7FF /* Reminder.swift in Sources */,
+				6527827D1C1E271400C90540 /* HelpTableViewController.swift in Sources */,
 				652824C41C163D100017A7FF /* TableViewCell.swift in Sources */,
 				6507A13D1C15906F00E6228F /* TeethReminderUITests.swift in Sources */,
 				652824BC1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */,
