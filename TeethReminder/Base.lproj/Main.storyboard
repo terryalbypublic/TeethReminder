@@ -108,11 +108,45 @@
                             <outlet property="delegate" destination="ayQ-vF-cuE" id="Q3i-iq-DPF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Reminders" id="n56-iF-Vyv"/>
+                    <navigationItem key="navigationItem" title="My Reminders" id="n56-iF-Vyv">
+                        <barButtonItem key="rightBarButtonItem" title="Help" id="9d5-gC-mZ5">
+                            <connections>
+                                <segue destination="UD8-Fc-qRd" kind="popoverPresentation" popoverAnchorBarButtonItem="9d5-gC-mZ5" id="Irc-Qx-HKK">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2I-uH-0zQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1112" y="582"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Pgv-gC-ywL">
+            <objects>
+                <viewController id="UD8-Fc-qRd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yuR-4g-Nv9"/>
+                        <viewControllerLayoutGuide type="bottom" id="rtg-58-MXS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pAA-fL-4LO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How it works" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8Z-a7-s6G">
+                                <rect key="frame" x="20" y="48" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JoE-gf-cIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="1656"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Erc-qF-XSY">
