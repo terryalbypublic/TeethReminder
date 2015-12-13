@@ -17,7 +17,9 @@ public class TableViewCell: UITableViewCell {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // ui switch bigger (30% more)
+        isActive.transform = CGAffineTransformMakeScale(1.3, 1.3);
+        
     }
 
     public override func setSelected(selected: Bool, animated: Bool) {

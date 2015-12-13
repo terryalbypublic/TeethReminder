@@ -17,6 +17,11 @@ class RemindersTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        //self.tableView.separatorColor = UIColor.blueColor()
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+            
+        
+        
         fillReminders()
 
         // Uncomment the following line to preserve selection between presentations
