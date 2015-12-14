@@ -115,7 +115,7 @@ public class ReminderList: NSObject{
             if(reminder.isActive){
                 let localNotification = UILocalNotification()
                 localNotification.fireDate = reminder.datetime
-                localNotification.alertBody = "Wash the teeth !!"
+                localNotification.alertBody = "Let brush your teeth !!!"
                 localNotification.repeatInterval = .Day
                 localNotification.timeZone = NSTimeZone.defaultTimeZone()
                 localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
