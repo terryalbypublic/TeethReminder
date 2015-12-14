@@ -59,13 +59,18 @@ class HelpTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        // screen size
+        var size = self.tableView.frame.size
+        
         if(indexPath.row == 0){
-            return 400;
+            return size.height-60;
         }
         else{
             return 60;
         }
     }
+    
     
     /*
     // Override to support conditional editing of the table view.

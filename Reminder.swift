@@ -63,19 +63,19 @@ public class ReminderList: NSObject{
         let reminder1 = Reminder()
         
         reminder1.datetime = NSDate()
-        reminder1.name = "Morning"
+        reminder1.name = "Reminder for the Morning"
         reminder1.isActive = false
         
         let reminder2 = Reminder()
         
         reminder2.datetime = NSDate()
-        reminder2.name = "Afternoon"
+        reminder2.name = "Reminder for the Afternoon"
         reminder2.isActive = false
         
         let reminder3 = Reminder()
         
         reminder3.datetime = NSDate()
-        reminder3.name = "Evening"
+        reminder3.name = "Reminder for the Evening"
         reminder3.isActive = false
         
         self.reminders.append(reminder1)

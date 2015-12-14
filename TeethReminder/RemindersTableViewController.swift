@@ -75,6 +75,11 @@ class RemindersTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Set the time of your reminders"
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
