@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Set Time-->
+        <!--Set Time View Controller-->
         <scene sceneID="IuO-MN-j02">
             <objects>
                 <viewController id="IHq-sh-dld" customClass="SetTimeViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,27 +25,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-Jk-ssT">
-                                <rect key="frame" x="200" y="161" width="200" height="216"/>
+                                <rect key="frame" x="196" y="161" width="100" height="216"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
-                                <rect key="frame" x="0.0" y="161" width="200" height="216"/>
+                                <rect key="frame" x="20" y="161" width="100" height="216"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Set Time" id="Iwa-pC-DZe">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="RyM-oJ-tcw">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="IHq-sh-dld" id="dSp-7W-XVr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="hoursPicker" destination="RsL-MH-1f1" id="A8L-pP-xWA"/>
                         <outlet property="minutesPicker" destination="LVf-Jk-ssT" id="e0z-IQ-Adq"/>
-                        <outlet property="saveButton" destination="RyM-oJ-tcw" id="eM4-WS-a6O"/>
                         <outlet property="textLabel" destination="6lR-0o-VSu" id="llT-vA-fUs"/>
                     </connections>
                 </viewController>
@@ -99,7 +91,7 @@
                                     <outlet property="isActive" destination="qlU-ba-5Lv" id="emu-5r-z7Q"/>
                                     <outlet property="name" destination="occ-fF-SxP" id="Uw2-7p-6FH"/>
                                     <outlet property="time" destination="e8B-Yp-OYI" id="lju-r8-ngk"/>
-                                    <segue destination="IHq-sh-dld" kind="presentation" id="k3x-Y9-iRf"/>
+                                    <segue destination="IHq-sh-dld" kind="show" id="k3x-Y9-iRf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -126,16 +118,16 @@
         <scene sceneID="GFw-bE-7jJ">
             <objects>
                 <tableViewController id="8ly-z7-aSI" customClass="HelpTableViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="500" sectionHeaderHeight="28" sectionFooterHeight="28" id="1N2-dI-fnB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="1N2-dI-fnB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="helpIdentifier" id="eBF-N9-gPe">
-                                <rect key="frame" x="0.0" y="28" width="600" height="500"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="helpIdentifier" rowHeight="400" id="eBF-N9-gPe">
+                                <rect key="frame" x="0.0" y="28" width="600" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBF-N9-gPe" id="8yF-1C-QaV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-Jm-XDF">
@@ -151,19 +143,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. Set the time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adt-cg-iKG">
-                                            <rect key="frame" x="37" y="230" width="112" height="21"/>
+                                            <rect key="frame" x="37" y="180" width="112" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEY-zg-PtR">
-                                            <rect key="frame" x="37" y="350" width="56" height="21"/>
+                                            <rect key="frame" x="37" y="250" width="56" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4. Enable or disable the reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arf-To-CGf">
-                                            <rect key="frame" x="37" y="470" width="252" height="21"/>
+                                            <rect key="frame" x="37" y="320" width="252" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -171,20 +163,24 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="backButtonIdentifier" rowHeight="100" id="CPL-VI-48v">
-                                <rect key="frame" x="0.0" y="528" width="600" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="backButtonIdentifier" rowHeight="60" id="CPL-VI-48v">
+                                <rect key="frame" x="0.0" y="428" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CPL-VI-48v" id="Eml-0I-xKZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Close" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-fc-ZQw">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Close" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-fc-ZQw">
                                             <rect key="frame" x="177" y="-2" width="120" height="89"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="33"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UrX-fc-ZQw" firstAttribute="centerY" secondItem="Eml-0I-xKZ" secondAttribute="centerY" id="bXC-ut-mcz"/>
+                                        <constraint firstItem="UrX-fc-ZQw" firstAttribute="centerX" secondItem="Eml-0I-xKZ" secondAttribute="centerX" id="bn7-Ux-eSj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="0.14000000000000001" colorSpace="calibratedRGB"/>
                             </tableViewCell>
