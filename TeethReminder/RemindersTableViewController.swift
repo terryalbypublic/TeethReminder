@@ -58,21 +58,37 @@ class RemindersTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return reminders.count
+        return notificationsAllowed() ? reminders.count : (reminders.count + 1)
+    }
+    
+    func notificationsAllowed() -> Bool{
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()!
+        return settings.types.contains([.Alert, .Sound])
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! TableViewCell
-
-        cell.index = indexPath.row
-        cell.name.text = reminders[indexPath.row].name
-        cell.isActive.setOn(reminders[indexPath.row].isActive, animated: false)
-        cell.time.text = reminders[indexPath.row].time()
         
-        // Configure the cell...
+        // the last row is reserved for the warning (if the notifications are not allowed)
+        if(indexPath.row == self.reminders.count){
+            
+            let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("WarningCell", forIndexPath: indexPath)
+            
+            return cell;
+        }
+        
+        else{
+            
+            let cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! TableViewCell
 
-        return cell
+            cell.index = indexPath.row
+            cell.name.text = reminders[indexPath.row].name
+            cell.isActive.setOn(reminders[indexPath.row].isActive, animated: false)
+            cell.time.text = reminders[indexPath.row].time()
+        
+            return cell
+            
+        }
     }
     
     

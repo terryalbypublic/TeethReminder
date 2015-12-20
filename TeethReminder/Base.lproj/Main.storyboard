@@ -117,6 +117,27 @@
                                     <segue destination="IHq-sh-dld" kind="presentation" id="k3x-Y9-iRf"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WarningCell" rowHeight="70" id="JGa-3Y-4uA">
+                                <rect key="frame" x="0.0" y="162" width="600" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGa-3Y-4uA" id="IsM-g7-3tt">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-IR-hSg">
+                                            <rect key="frame" x="12" y="0.0" width="300" height="37"/>
+                                            <string key="text">The notifications for TeethReminder are disabled. To enable it go to: Settings &gt; Notifications &gt; TeethReminder &gt; Allow Notifications</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Travel-Warning-min.png" translatesAutoresizingMaskIntoConstraints="NO" id="ebW-BN-AFi">
+                                            <rect key="frame" x="12" y="34" width="30" height="26"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.14000000000000001" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ayQ-vF-cuE" id="cY6-nT-n6M"/>
@@ -242,4 +263,7 @@
             <point key="canvasLocation" x="344" y="538"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Travel-Warning-min.png" width="600" height="500"/>
+    </resources>
 </document>

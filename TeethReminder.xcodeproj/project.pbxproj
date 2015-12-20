@@ -13,6 +13,7 @@
 		6507A1271C15906E00E6228F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6507A1251C15906E00E6228F /* LaunchScreen.storyboard */; };
 		6507A1321C15906F00E6228F /* TeethReminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507A1311C15906F00E6228F /* TeethReminderTests.swift */; };
 		6507A13D1C15906F00E6228F /* TeethReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507A13C1C15906F00E6228F /* TeethReminderUITests.swift */; };
+		651DC7781C2764AC0022B9AB /* Travel-Warning-min.png in Resources */ = {isa = PBXBuildFile; fileRef = 651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */; };
 		6527827B1C1E271400C90540 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527827A1C1E271400C90540 /* HelpTableViewController.swift */; };
 		6527827C1C1E271400C90540 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527827A1C1E271400C90540 /* HelpTableViewController.swift */; };
 		6527827D1C1E271400C90540 /* HelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527827A1C1E271400C90540 /* HelpTableViewController.swift */; };
@@ -60,6 +61,7 @@
 		6507A1381C15906F00E6228F /* TeethReminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeethReminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6507A13C1C15906F00E6228F /* TeethReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeethReminderUITests.swift; sourceTree = "<group>"; };
 		6507A13E1C15906F00E6228F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Travel-Warning-min.png"; sourceTree = "<group>"; };
 		6527827A1C1E271400C90540 /* HelpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTableViewController.swift; sourceTree = "<group>"; };
 		652824B91C1631D50017A7FF /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
 		652824BD1C1636D20017A7FF /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = ../Reminder.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				652824B91C1631D50017A7FF /* RemindersTableViewController.swift */,
 				6507A1201C15906E00E6228F /* Main.storyboard */,
 				6507A1231C15906E00E6228F /* Assets.xcassets */,
+				651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */,
 				6507A1251C15906E00E6228F /* LaunchScreen.storyboard */,
 				6507A1281C15906E00E6228F /* Info.plist */,
 				652824C51C1881270017A7FF /* SetTimeViewController.swift */,
@@ -255,6 +258,7 @@
 				6507A1271C15906E00E6228F /* LaunchScreen.storyboard in Resources */,
 				6507A1241C15906E00E6228F /* Assets.xcassets in Resources */,
 				6507A1221C15906E00E6228F /* Main.storyboard in Resources */,
+				651DC7781C2764AC0022B9AB /* Travel-Warning-min.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
