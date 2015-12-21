@@ -26,17 +26,16 @@ class RemindersTableViewController: UITableViewController {
         //self.tableView.separatorColor = UIColor.blueColor()
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         fillReminders()
-        registerEventHandlerForPush()
+        
+        if(!notificationsAllowed()){
+            registerEventHandlerForPush()
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    // handler used for the first app start, when the user accepts (or refuse) to allow notifications
     func registerEventHandlerForPush(){
-        
+        // if the user tap on allow notifications, the method allowPushTapped is called
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "allowPushTapped",
@@ -45,6 +44,7 @@ class RemindersTableViewController: UITableViewController {
         
     }
     
+    // the user allowed to receive push
     func allowPushTapped(){
         self.tableView.reloadData()
     }
