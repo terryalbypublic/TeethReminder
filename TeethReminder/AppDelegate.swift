@@ -6,12 +6,17 @@
 //  Copyright © 2015 TA. All rights reserved.
 //
 
+
+
+
 import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -24,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings){
+       NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.userNotificationKey, object: self)
     }
 
     func applicationWillResignActive(application: UIApplication) {
