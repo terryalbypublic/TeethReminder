@@ -15,7 +15,7 @@ public class GlobalConstants{
 
 class RemindersTableViewController: UITableViewController {
 
-    
+    var helpViewController = HelpViewController()
     var reminderList = ReminderList.sharedInstance
     var reminders = Array<Reminder>()
     
@@ -23,14 +23,58 @@ class RemindersTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        //self.tableView.separatorColor = UIColor.blueColor()
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         fillReminders()
         
         if(!notificationsAllowed()){
             registerEventHandlerForPush()
         }
-
+    }
+    
+    @IBAction func helpButtonTapped(sender: AnyObject) {
+        self.helpViewController = getHelpViewController() as! HelpViewController
+        self.navigationController!.view.addSubview(helpViewController.view)
+        helpViewController.closeButtonTapped.addTarget(self, action: "closeHelpView:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.animateOpenView(self.helpViewController.view)
+    }
+    
+    func animateOpenView(view: UIView){
+        UIView.animateWithDuration(0.5, animations: {
+            self.view.alpha = 0.5;
+            self.view.transform = CGAffineTransformMakeTranslation(0, 0)
+        })
+        
+        let scale = CGAffineTransformMakeScale(0.3, 0.3)
+        let translate = CGAffineTransformMakeTranslation(50, -50)
+        view.transform = CGAffineTransformConcat(scale, translate)
+        view.alpha = 0
+        
+        UIView.animateWithDuration(0.5, animations: {
+            let scale = CGAffineTransformMakeScale(1,1)
+            let translate = CGAffineTransformMakeTranslation(0, 0)
+            view.transform = CGAffineTransformConcat(scale, translate)
+            view.alpha = 1
+        })
+    }
+    
+    func animateCloseView(view: UIView){
+        UIView.animateWithDuration(0.5, animations: {
+            self.view.alpha = 1;
+            self.view.transform = CGAffineTransformMakeTranslation(0, 0)
+        })
+    }
+    
+    func closeHelpView(sender: AnyObject){
+        self.animateCloseView(self.helpViewController.view)
+        self.helpViewController.view.removeFromSuperview()
+    }
+    
+    func getHelpViewController() -> UIViewController{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let helpViewCtr = storyboard.instantiateViewControllerWithIdentifier("HelpViewController") as UIViewController
+        helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+        helpViewCtr.view.layer.cornerRadius = 5
+        return helpViewCtr
     }
     
     // handler used for the first app start, when the user accepts (or refuse) to allow notifications
@@ -156,7 +200,7 @@ class RemindersTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
