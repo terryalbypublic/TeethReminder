@@ -80,7 +80,14 @@ public class RemindersTableViewController: UITableViewController {
     func getHelpViewController() -> UIViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let helpViewCtr = storyboard.instantiateViewControllerWithIdentifier("HelpViewController") as UIViewController
-        helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+        
+        if(UIDevice.currentDevice().modelName == "iPhone4s"){
+            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.5)
+        }
+        else{
+           helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+        }
+        
         helpViewCtr.view.layer.cornerRadius = 5
         return helpViewCtr
     }
@@ -182,7 +189,21 @@ public class RemindersTableViewController: UITableViewController {
     func getTimeViewController() -> UIViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let timeViewCtr = storyboard.instantiateViewControllerWithIdentifier("SetTimeViewController") as UIViewController
-        timeViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+        
+        if(UIDevice.currentDevice().modelName == "iPhone4s"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.8)
+        }
+        else if(UIDevice.currentDevice().modelName == "iPhone 5"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.6)
+        }
+        
+        else if(UIDevice.currentDevice().modelName  == "iPhone 5s"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.6)
+        }
+        else{
+           timeViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+        }
+        
         timeViewCtr.view.layer.cornerRadius = 5
         return timeViewCtr
     }

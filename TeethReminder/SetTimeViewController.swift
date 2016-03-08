@@ -10,8 +10,7 @@ import UIKit
 
 public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var minutesPicker: UIPickerView!
-    @IBOutlet weak var hoursPicker: UIPickerView!
+    @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var textLabel: UILabel!
     
     
@@ -25,10 +24,8 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.minutesPicker.delegate = self
-        self.hoursPicker.delegate = self
-        self.minutesPicker.dataSource = self
-        self.hoursPicker.dataSource = self
+        self.timePicker.delegate = self
+        self.timePicker.dataSource = self
         
         // Do any additional setup after loading the view.
     }
@@ -48,15 +45,15 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         let minutes = components.minute
         let hour = components.hour
         
-        self.hoursPicker.selectRow(hour, inComponent: 0, animated: false)
-        self.minutesPicker.selectRow(minutes, inComponent: 0, animated: false)
+        self.timePicker.selectRow(hour, inComponent: 0, animated: false)
+        self.timePicker.selectRow(minutes, inComponent: 1, animated: false)
         
         
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
-        let minutes = self.minutesPicker.selectedRowInComponent(0)
-        let hours = self.hoursPicker.selectedRowInComponent(0)
+        let minutes = self.timePicker.selectedRowInComponent(1)
+        let hours = self.timePicker.selectedRowInComponent(0)
         
         let datecomponents = NSDateComponents()
         datecomponents.minute = minutes
@@ -103,22 +100,20 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
     // MARK: - Picker Delegate
     
     public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(pickerView == self.minutesPicker){
+        if(component == 1){
             return pickerDataMinutes.count;
         }
-        
         return pickerDataHours.count;
     }
     
     public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String! {
-        if(pickerView == self.minutesPicker){
+        if(component == 1){
             return pickerDataMinutes[row]
         }
-        
         return pickerDataHours[row]
     }
     
