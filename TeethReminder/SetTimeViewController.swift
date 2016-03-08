@@ -30,14 +30,15 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.minutesPicker.dataSource = self
         self.hoursPicker.dataSource = self
         
+        // Do any additional setup after loading the view.
+    }
+    
+    public func refresh(){
         fillMinutesData()
         fillHoursData()
         fillTextLabel()
         restoreValuesFromEntity()
-        
-        // Do any additional setup after loading the view.
     }
-    
 
     func restoreValuesFromEntity(){
         

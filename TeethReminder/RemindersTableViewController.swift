@@ -173,6 +173,7 @@ public class RemindersTableViewController: UITableViewController {
         let rowIndex = self.tableView.indexPathForSelectedRow?.row
         let reminder = ReminderList.sharedInstance.reminders[rowIndex!]
         self.timeViewController.reminder = reminder
+        self.timeViewController.refresh()
         self.navigationController!.view.addSubview(timeViewController.view)
         timeViewController.saveButton.addTarget(self, action: "closeTimeView:", forControlEvents: UIControlEvents.TouchUpInside)
         self.animateOpenView(self.timeViewController.view)
