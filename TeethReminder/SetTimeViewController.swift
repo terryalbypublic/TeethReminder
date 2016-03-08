@@ -12,10 +12,10 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
 
     @IBOutlet weak var minutesPicker: UIPickerView!
     @IBOutlet weak var hoursPicker: UIPickerView!
- 
-    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
     
+    
+    @IBOutlet public weak var saveButton: UIButton!
     public var reminder : Reminder = Reminder()
     var pickerDataHours : Array<String> = []
     var pickerDataMinutes : Array<String> = []
@@ -30,8 +30,6 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.minutesPicker.dataSource = self
         self.hoursPicker.dataSource = self
         
-
-        setUIForSaveButton()
         fillMinutesData()
         fillHoursData()
         fillTextLabel()
@@ -40,10 +38,7 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Do any additional setup after loading the view.
     }
     
-    func setUIForSaveButton(){
-        saveButton.backgroundColor = UIColor(red: 219.0/255.0, green: 237.0/255.0, blue: 254.0/255.0, alpha: 1)
-    }
-    
+
     func restoreValuesFromEntity(){
         
         let date = reminder.datetime
@@ -72,7 +67,8 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
 //        let alert = UIAlertController(title: "Saved", message: "Successful saved!", preferredStyle: UIAlertControllerStyle.Alert)
 //        self.presentViewController(alert, animated: true, completion: nil)
 //        alert.dismissViewControllerAnimated(false, completion: nil)
-        self.dismissViewControllerAnimated(true, completion: nil)
+
+        
     }
 
     override public func didReceiveMemoryWarning() {

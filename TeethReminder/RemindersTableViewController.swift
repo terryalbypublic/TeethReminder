@@ -13,13 +13,14 @@ public class GlobalConstants{
     static let userNotificationKey = "terence.keyForAllowedPush"
 }
 
-class RemindersTableViewController: UITableViewController {
+public class RemindersTableViewController: UITableViewController {
 
     var helpViewController = HelpViewController()
+    var timeViewController = SetTimeViewController()
     var reminderList = ReminderList.sharedInstance
     var reminders = Array<Reminder>()
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
@@ -69,6 +70,13 @@ class RemindersTableViewController: UITableViewController {
         self.helpViewController.view.removeFromSuperview()
     }
     
+    public func closeTimeView(sender: AnyObject){
+        self.timeViewController.saveButtonTapped(sender)
+        self.animateCloseView(self.timeViewController.view)
+        self.timeViewController.view.removeFromSuperview()
+        self.tableView.reloadData()
+    }
+    
     func getHelpViewController() -> UIViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let helpViewCtr = storyboard.instantiateViewControllerWithIdentifier("HelpViewController") as UIViewController
@@ -93,7 +101,7 @@ class RemindersTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         self.tableView.reloadData()
     }
@@ -108,19 +116,19 @@ class RemindersTableViewController: UITableViewController {
         reminderList.serializeAndSave()
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return notificationsAllowed() ? reminders.count : (reminders.count + 1)
     }
@@ -131,7 +139,7 @@ class RemindersTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // the last row is reserved for the warning (if the notifications are not allowed)
         if(indexPath.row == self.reminders.count){
@@ -156,8 +164,26 @@ class RemindersTableViewController: UITableViewController {
     }
     
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    override public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "  Set the time of your reminders"
+    }
+    
+    override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.timeViewController = getTimeViewController() as! SetTimeViewController
+        let rowIndex = self.tableView.indexPathForSelectedRow?.row
+        let reminder = ReminderList.sharedInstance.reminders[rowIndex!]
+        self.timeViewController.reminder = reminder
+        self.navigationController!.view.addSubview(timeViewController.view)
+        timeViewController.saveButton.addTarget(self, action: "closeTimeView:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.animateOpenView(self.timeViewController.view)
+    }
+    
+    func getTimeViewController() -> UIViewController{
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let timeViewCtr = storyboard.instantiateViewControllerWithIdentifier("SetTimeViewController") as UIViewController
+        timeViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+        timeViewCtr.view.layer.cornerRadius = 5
+        return timeViewCtr
     }
     
 
@@ -200,22 +226,7 @@ class RemindersTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        if(self.tableView.indexPathForSelectedRow != nil){
-            
-            let rowIndex = self.tableView.indexPathForSelectedRow?.row
-            
-            let reminder = ReminderList.sharedInstance.reminders[rowIndex!]
-            
-            let nextViewController = segue.destinationViewController as! SetTimeViewController
-            nextViewController.reminder = reminder
-            
-        }
-        
-    }
+
     
 
 }

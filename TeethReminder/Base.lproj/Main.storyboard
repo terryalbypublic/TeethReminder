@@ -9,7 +9,7 @@
         <!--Set the time-->
         <scene sceneID="IuO-MN-j02">
             <objects>
-                <viewController id="IHq-sh-dld" customClass="SetTimeViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SetTimeViewController" storyboardIdentifier="SetTimeViewController" id="IHq-sh-dld" customClass="SetTimeViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sdc-IH-uPq"/>
                         <viewControllerLayoutGuide type="bottom" id="Q6T-h6-hja"/>
@@ -18,35 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-0o-VSu">
-                                <rect key="frame" x="30" y="81" width="400" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-Jk-ssT">
-                                <rect key="frame" x="196" y="161" width="100" height="216"/>
+                                <rect key="frame" x="196" y="51" width="100" height="216"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
-                                <rect key="frame" x="20" y="161" width="100" height="216"/>
+                                <rect key="frame" x="43" y="51" width="100" height="216"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82X-aB-pHV">
-                                <rect key="frame" x="180" y="464" width="107" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="33"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceI-XU-jor">
+                                <rect key="frame" x="248" y="20" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="IHq-sh-dld" eventType="touchUpInside" id="Eiv-YN-9vj"/>
+                                    <action selector="saveButtonTapped:" destination="IHq-sh-dld" eventType="touchUpInside" id="NPj-c2-pzo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set the time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-bv-L9y">
+                                <rect key="frame" x="43" y="24" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="82X-aB-pHV" firstAttribute="leading" secondItem="vN6-IO-23J" secondAttribute="leadingMargin" constant="-30" id="Ha3-H9-CLb"/>
-                            <constraint firstItem="Q6T-h6-hja" firstAttribute="top" secondItem="82X-aB-pHV" secondAttribute="bottom" id="UFp-9a-4si"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="82X-aB-pHV" secondAttribute="trailing" constant="-30" id="o26-1Y-xTu"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Set the time" id="U0b-9s-9Zy">
@@ -60,8 +52,8 @@
                     <connections>
                         <outlet property="hoursPicker" destination="RsL-MH-1f1" id="A8L-pP-xWA"/>
                         <outlet property="minutesPicker" destination="LVf-Jk-ssT" id="e0z-IQ-Adq"/>
-                        <outlet property="saveButton" destination="82X-aB-pHV" id="bhg-AG-zov"/>
-                        <outlet property="textLabel" destination="6lR-0o-VSu" id="llT-vA-fUs"/>
+                        <outlet property="saveButton" destination="ceI-XU-jor" id="Xve-xz-mRh"/>
+                        <outlet property="textLabel" destination="S4u-bv-L9y" id="i35-8s-ngA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXi-Jl-8nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,7 +106,6 @@
                                     <outlet property="isActive" destination="qlU-ba-5Lv" id="emu-5r-z7Q"/>
                                     <outlet property="name" destination="occ-fF-SxP" id="Uw2-7p-6FH"/>
                                     <outlet property="time" destination="e8B-Yp-OYI" id="lju-r8-ngk"/>
-                                    <segue destination="IHq-sh-dld" kind="presentation" id="k3x-Y9-iRf"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WarningCell" rowHeight="70" id="JGa-3Y-4uA">
