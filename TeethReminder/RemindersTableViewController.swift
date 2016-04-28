@@ -23,7 +23,8 @@ public class RemindersTableViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        self.tableView.backgroundColor = UIColor(red: 33/255, green: 134/255, blue: 239/255, alpha: 1)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         fillReminders()
         
@@ -38,6 +39,7 @@ public class RemindersTableViewController: UITableViewController {
         helpViewController.closeButtonTapped.addTarget(self, action: "closeHelpView:", forControlEvents: UIControlEvents.TouchUpInside)
         self.animateOpenView(self.helpViewController.view)
     }
+    
     
     func animateOpenView(view: UIView){
         UIView.animateWithDuration(0.5, animations: {
@@ -171,9 +173,6 @@ public class RemindersTableViewController: UITableViewController {
     }
     
     
-    override public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "  Set the time of your reminders"
-    }
     
     override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.timeViewController = getTimeViewController() as! SetTimeViewController

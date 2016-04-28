@@ -19,6 +19,7 @@ public class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // ui switch bigger (30% more)
         isActive.transform = CGAffineTransformMakeScale(1.3, 1.3);
+        backgroundColor = UIColor(red: 33/255, green: 134/255, blue: 239/255, alpha: 1)
         
     }
 

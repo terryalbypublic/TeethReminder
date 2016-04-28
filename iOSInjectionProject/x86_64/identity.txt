@@ -1,0 +1,2 @@
+/Users/teralb/Library/Developer/Xcode/DerivedData/TeethReminder-cnifzodazdvhzfcikekqqnwddvuc/Build/Products/Debug-iphonesimulator/TeethReminder.app
+iPhone Distribution: Terence Alberti (W4LB2R7L9L)
