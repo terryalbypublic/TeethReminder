@@ -23,9 +23,9 @@ public class RemindersTableViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = UIColor(red: 33/255, green: 134/255, blue: 239/255, alpha: 1)
+        self.tableView.backgroundColor = Styles.tableViewBackgroundColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
         fillReminders()
         
         if(!notificationsAllowed()){
@@ -131,6 +131,10 @@ public class RemindersTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return Styles.tableViewCellHeight();
+    }
 
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -154,13 +158,12 @@ public class RemindersTableViewController: UITableViewController {
         if(indexPath.row == self.reminders.count){
             
             let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("WarningCell", forIndexPath: indexPath)
-            
             return cell;
         }
         
         else{
             
-            let cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! TableViewCell
+            let cell : ReminderViewCell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! ReminderViewCell
 
             cell.index = indexPath.row
             cell.name.text = reminders[indexPath.row].name

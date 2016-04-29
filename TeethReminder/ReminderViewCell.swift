@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TableViewCell: UITableViewCell {
+public class ReminderViewCell: UITableViewCell {
     
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var name: UILabel!
@@ -18,8 +18,8 @@ public class TableViewCell: UITableViewCell {
     public override func awakeFromNib() {
         super.awakeFromNib()
         // ui switch bigger (30% more)
-        isActive.transform = CGAffineTransformMakeScale(1.3, 1.3);
-        backgroundColor = UIColor(red: 33/255, green: 134/255, blue: 239/255, alpha: 1)
+        isActive.transform = CGAffineTransformMakeScale(1.3, 1.3)
+        backgroundColor = Styles.tableViewBackgroundColor()
         
     }
 
