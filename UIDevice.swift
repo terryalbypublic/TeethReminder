@@ -10,8 +10,8 @@ import UIKit
 
 public class CurrentDevice{
     public static let device = CurrentDevice()
-    //public var modelName = UIDevice.currentDevice().modelName
-    public var modelName = "iPhone 4s"
+    public var modelName = UIDevice.currentDevice().modelName
+    //public var modelName = "iPhone 6 Plus"  use for testing only
 }
 
 

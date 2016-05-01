@@ -220,7 +220,10 @@ public class RemindersTableViewController: UITableViewController {
             timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.5)
         }
         else if(CurrentDevice.device.modelName  == "iPhone 6"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.42)
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.46)
+        }
+        else if(CurrentDevice.device.modelName  == "iPhone 6s"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.46)
         }
         else{
             timeViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
