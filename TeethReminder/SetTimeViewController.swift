@@ -11,10 +11,8 @@ import UIKit
 public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var timePicker: UIPickerView!
-    @IBOutlet weak var textLabel: UILabel!
-    
-    
     @IBOutlet public weak var saveButton: UIButton!
+    
     public var reminder : Reminder = Reminder()
     var pickerDataHours : Array<String> = []
     var pickerDataMinutes : Array<String> = []
@@ -33,7 +31,6 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
     public func refresh(){
         fillMinutesData()
         fillHoursData()
-        fillTextLabel()
         restoreValuesFromEntity()
     }
 
@@ -73,10 +70,7 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func fillTextLabel(){
-        self.textLabel.text = reminder.name
-    }
+
     
     func fillMinutesData(){
         

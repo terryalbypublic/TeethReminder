@@ -8,6 +8,13 @@
 
 import UIKit
 
+public class CurrentDevice{
+    public static let device = CurrentDevice()
+    //public var modelName = UIDevice.currentDevice().modelName
+    public var modelName = "iPhone 4s"
+}
+
+
 public extension UIDevice {
     
     var modelName: String {
@@ -18,6 +25,8 @@ public extension UIDevice {
             guard let value = element.value as? Int8 where value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
+        
+        
         
         switch identifier {
         case "iPod5,1":                                 return "iPod Touch 5"

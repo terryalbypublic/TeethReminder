@@ -32,6 +32,9 @@
 		653A2DFE1C8F48D700D5DB45 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */; };
 		653A2DFF1C8F48D700D5DB45 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */; };
 		653A2E001C8F48D700D5DB45 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */; };
+		6547EA861CD6680D00E4297D /* check (3).png in Resources */ = {isa = PBXBuildFile; fileRef = 6547EA851CD6680D00E4297D /* check (3).png */; };
+		6547EA881CD6687D00E4297D /* check (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 6547EA871CD6687D00E4297D /* check (1).png */; };
+		6547EA8A1CD6689A00E4297D /* check (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 6547EA891CD6689A00E4297D /* check (2).png */; };
 		658665731CD386A600172395 /* WarningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665721CD386A600172395 /* WarningViewCell.swift */; };
 		658665761CD386F500172395 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
 		659B9FF51CD38F1500E482C1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
@@ -77,6 +80,9 @@
 		652824C51C1881270017A7FF /* SetTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		653A2DF91C8F240300D5DB45 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = ../HelpViewController.swift; sourceTree = "<group>"; };
 		653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDevice.swift; path = ../UIDevice.swift; sourceTree = "<group>"; };
+		6547EA851CD6680D00E4297D /* check (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check (3).png"; sourceTree = "<group>"; };
+		6547EA871CD6687D00E4297D /* check (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check (1).png"; sourceTree = "<group>"; };
+		6547EA891CD6689A00E4297D /* check (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check (2).png"; sourceTree = "<group>"; };
 		658665721CD386A600172395 /* WarningViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningViewCell.swift; sourceTree = "<group>"; };
 		658665751CD386F500172395 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +146,9 @@
 				6507A1201C15906E00E6228F /* Main.storyboard */,
 				6507A1231C15906E00E6228F /* Assets.xcassets */,
 				651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */,
+				6547EA851CD6680D00E4297D /* check (3).png */,
+				6547EA891CD6689A00E4297D /* check (2).png */,
+				6547EA871CD6687D00E4297D /* check (1).png */,
 				6507A1251C15906E00E6228F /* LaunchScreen.storyboard */,
 				6507A1281C15906E00E6228F /* Info.plist */,
 				652824C51C1881270017A7FF /* SetTimeViewController.swift */,
@@ -279,8 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6507A1271C15906E00E6228F /* LaunchScreen.storyboard in Resources */,
+				6547EA861CD6680D00E4297D /* check (3).png in Resources */,
+				6547EA881CD6687D00E4297D /* check (1).png in Resources */,
 				6507A1241C15906E00E6228F /* Assets.xcassets in Resources */,
 				6507A1221C15906E00E6228F /* Main.storyboard in Resources */,
+				6547EA8A1CD6689A00E4297D /* check (2).png in Resources */,
 				651DC7781C2764AC0022B9AB /* Travel-Warning-min.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,13 +482,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terence Alberti (W4LB2R7L9L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terence Alberti (W4LB2R7L9L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TeethReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.TeethReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c04961ff-7977-49b3-a89a-1826883c4090";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -484,13 +496,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terence Alberti (W4LB2R7L9L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terence Alberti (W4LB2R7L9L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TeethReminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.TeethReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c04961ff-7977-49b3-a89a-1826883c4090";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

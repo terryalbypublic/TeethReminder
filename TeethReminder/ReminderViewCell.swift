@@ -10,6 +10,7 @@ import UIKit
 
 public class ReminderViewCell: UITableViewCell {
     
+    @IBOutlet weak var isActiveLabel: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var isActive: UISwitch!
@@ -18,7 +19,7 @@ public class ReminderViewCell: UITableViewCell {
     public override func awakeFromNib() {
         super.awakeFromNib()
         // ui switch bigger (30% more)
-        isActive.transform = CGAffineTransformMakeScale(1.3, 1.3)
+        isActive.transform = CGAffineTransformMakeScale(1.6, 1.6)
         backgroundColor = Styles.tableViewBackgroundColor()
         
     }
@@ -28,9 +29,16 @@ public class ReminderViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func OnOffButtonTapped(sender: AnyObject) {
+        self.isActive.setOn(!self.isActive.on, animated: true)
+        switchButtonTapped(sender)
+    }
+    
     @IBAction func switchButtonTapped(sender: AnyObject) {
+        
         ReminderList.sharedInstance.reminders[index].isActive = isActive.on
+        self.isActiveLabel.text = ReminderList.sharedInstance.reminders[index].isActive ? "On" : "Off"
         ReminderList.sharedInstance.serializeAndSave()
     }
 }

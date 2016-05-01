@@ -26,6 +26,10 @@ public class RemindersTableViewController: UITableViewController {
         self.tableView.backgroundColor = Styles.tableViewBackgroundColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
+        self.navigationController?.navigationBar.barTintColor = Styles.tableViewBackgroundColor()
+        self.navigationController?.navigationBar.barTintColor = Styles.navigationBackgroundColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Styles.fontColor(.Blue)]
+        
         fillReminders()
         
         if(!notificationsAllowed()){
@@ -83,11 +87,17 @@ public class RemindersTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let helpViewCtr = storyboard.instantiateViewControllerWithIdentifier("HelpViewController") as UIViewController
         
-        if(UIDevice.currentDevice().modelName == "iPhone4s"){
-            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.5)
+        if(CurrentDevice.device.modelName == "iPhone 4s"){
+            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.52)
+        }
+        else if(CurrentDevice.device.modelName == "iPhone 5"){
+            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.45)
+        }
+        else if(CurrentDevice.device.modelName == "iPhone 5s"){
+            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.45)
         }
         else{
-           helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+           helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.35)
         }
         
         helpViewCtr.view.layer.cornerRadius = 5
@@ -168,6 +178,7 @@ public class RemindersTableViewController: UITableViewController {
             cell.index = indexPath.row
             cell.name.text = reminders[indexPath.row].name
             cell.isActive.setOn(reminders[indexPath.row].isActive, animated: false)
+            cell.isActiveLabel.text = reminders[indexPath.row].isActive ? "On" : "Off"
             cell.time.text = reminders[indexPath.row].time()
         
             return cell
@@ -178,6 +189,12 @@ public class RemindersTableViewController: UITableViewController {
     
     
     override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // if the user selected the cell with the warning
+        if(indexPath.row == 3){
+            return;
+        }
+        
         self.timeViewController = getTimeViewController() as! SetTimeViewController
         let rowIndex = self.tableView.indexPathForSelectedRow?.row
         let reminder = ReminderList.sharedInstance.reminders[rowIndex!]
@@ -192,15 +209,18 @@ public class RemindersTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let timeViewCtr = storyboard.instantiateViewControllerWithIdentifier("SetTimeViewController") as UIViewController
         
-        if(UIDevice.currentDevice().modelName == "iPhone4s"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.8)
-        }
-        else if(UIDevice.currentDevice().modelName == "iPhone 5"){
+        if(CurrentDevice.device.modelName == "iPhone 4s"){
             timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.6)
+        }
+        else if(CurrentDevice.device.modelName == "iPhone 5"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.5)
         }
         
-        else if(UIDevice.currentDevice().modelName  == "iPhone 5s"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.6)
+        else if(CurrentDevice.device.modelName  == "iPhone 5s"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.5)
+        }
+        else if(CurrentDevice.device.modelName  == "iPhone 6"){
+            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.42)
         }
         else{
             timeViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
