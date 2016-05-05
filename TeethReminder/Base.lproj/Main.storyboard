@@ -18,24 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egT-2J-iJl">
-                                <rect key="frame" x="516" y="477" width="64" height="64"/>
-                                <state key="normal" image="check (2).png"/>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="IHq-sh-dld" eventType="touchUpInside" id="tZ2-oy-Sbb"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
                                 <rect key="frame" x="140" y="20" width="320" height="216"/>
                                 <color key="tintColor" red="0.09521724007" green="0.28504747019999999" blue="0.72085188519999999" alpha="1" colorSpace="calibratedRGB"/>
                             </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-iJ-S9X" customClass="OkButtonView" customModule="TeethReminder" customModuleProvider="target">
+                                <rect key="frame" x="520" y="488" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="B2W-xS-QZg"/>
+                                    <constraint firstAttribute="width" constant="60" id="cUg-fc-8i6"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonOkTouchedDown:" destination="IHq-sh-dld" eventType="touchDown" id="zI4-ui-W00"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="egT-2J-iJl" secondAttribute="trailing" id="0hn-O4-heY"/>
                             <constraint firstItem="RsL-MH-1f1" firstAttribute="centerX" secondItem="vN6-IO-23J" secondAttribute="centerX" id="CYB-Mb-QPB"/>
+                            <constraint firstItem="Q6T-h6-hja" firstAttribute="top" secondItem="XXl-iJ-S9X" secondAttribute="bottom" constant="8" id="QQW-Cs-YLW"/>
                             <constraint firstItem="RsL-MH-1f1" firstAttribute="top" secondItem="Sdc-IH-uPq" secondAttribute="bottom" id="ePy-E4-46u"/>
-                            <constraint firstItem="Q6T-h6-hja" firstAttribute="top" secondItem="egT-2J-iJl" secondAttribute="bottom" constant="15" id="fOj-rH-D1p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XXl-iJ-S9X" secondAttribute="trailing" id="vaK-3O-pGv"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -44,7 +48,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="saveButton" destination="egT-2J-iJl" id="ONk-lP-bjR"/>
+                        <outlet property="saveButton" destination="XXl-iJ-S9X" id="k6Q-Sa-qc8"/>
                         <outlet property="timePicker" destination="RsL-MH-1f1" id="FLa-iW-b0l"/>
                     </connections>
                 </viewController>
@@ -196,7 +200,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfa-np-bi7">
                                 <rect key="frame" x="101" y="99" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. Select the reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVF-bL-eKP">
@@ -224,19 +228,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-wx-so9">
-                                <rect key="frame" x="511" y="521" width="64" height="64"/>
-                                <state key="normal" image="check (2).png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNx-3v-cT6" customClass="OkButtonView" customModule="TeethReminder" customModuleProvider="target">
+                                <rect key="frame" x="520" y="532" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2r1-hJ-2SK"/>
+                                    <constraint firstAttribute="width" constant="60" id="Add-55-lRb"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="touchDownOkButton:" destination="LPc-fy-ksQ" eventType="touchDown" id="p7e-m8-Kjt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bod-e3-4oL" firstAttribute="top" secondItem="Odz-wx-so9" secondAttribute="bottom" constant="15" id="Stn-FI-OIA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Odz-wx-so9" secondAttribute="trailing" constant="5" id="ifG-ff-Uce"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BNx-3v-cT6" secondAttribute="trailing" id="Pof-c5-2ds"/>
+                            <constraint firstItem="bod-e3-4oL" firstAttribute="top" secondItem="BNx-3v-cT6" secondAttribute="bottom" constant="8" id="Tll-As-eWY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="closeButtonTapped" destination="Odz-wx-so9" id="Se9-A7-fOc"/>
+                        <outlet property="closeButtonTapped" destination="BNx-3v-cT6" id="3q3-iw-eXC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMN-ke-Rce" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -262,6 +272,5 @@
     </scenes>
     <resources>
         <image name="Travel-Warning-min.png" width="600" height="500"/>
-        <image name="check (2).png" width="64" height="64"/>
     </resources>
 </document>

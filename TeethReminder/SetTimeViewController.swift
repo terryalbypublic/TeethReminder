@@ -48,6 +48,13 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         
     }
     
+    
+    @IBAction func buttonOkTouchedDown(sender: OkButtonView) {
+        sender.highlight = true
+        sender.setNeedsDisplay()
+    }
+    
+    
     @IBAction func saveButtonTapped(sender: AnyObject) {
         let minutes = self.timePicker.selectedRowInComponent(1)
         let hours = self.timePicker.selectedRowInComponent(0)

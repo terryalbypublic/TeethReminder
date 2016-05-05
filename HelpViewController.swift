@@ -17,6 +17,10 @@ public class HelpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func touchDownOkButton(sender: OkButtonView) {
+        sender.highlight=true
+        sender.setNeedsDisplay()
+    }
 
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

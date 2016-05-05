@@ -32,9 +32,9 @@
 		653A2DFE1C8F48D700D5DB45 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */; };
 		653A2DFF1C8F48D700D5DB45 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */; };
 		653A2E001C8F48D700D5DB45 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */; };
-		6547EA861CD6680D00E4297D /* check (3).png in Resources */ = {isa = PBXBuildFile; fileRef = 6547EA851CD6680D00E4297D /* check (3).png */; };
-		6547EA881CD6687D00E4297D /* check (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 6547EA871CD6687D00E4297D /* check (1).png */; };
-		6547EA8A1CD6689A00E4297D /* check (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 6547EA891CD6689A00E4297D /* check (2).png */; };
+		653FC9D61CDC074900446397 /* OkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FC9D51CDC074900446397 /* OkButtonView.swift */; };
+		653FC9D71CDC11B500446397 /* OkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FC9D51CDC074900446397 /* OkButtonView.swift */; };
+		653FC9D81CDC11B600446397 /* OkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FC9D51CDC074900446397 /* OkButtonView.swift */; };
 		658665731CD386A600172395 /* WarningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665721CD386A600172395 /* WarningViewCell.swift */; };
 		658665761CD386F500172395 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
 		659B9FF51CD38F1500E482C1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
@@ -80,9 +80,7 @@
 		652824C51C1881270017A7FF /* SetTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		653A2DF91C8F240300D5DB45 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = ../HelpViewController.swift; sourceTree = "<group>"; };
 		653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDevice.swift; path = ../UIDevice.swift; sourceTree = "<group>"; };
-		6547EA851CD6680D00E4297D /* check (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check (3).png"; sourceTree = "<group>"; };
-		6547EA871CD6687D00E4297D /* check (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check (1).png"; sourceTree = "<group>"; };
-		6547EA891CD6689A00E4297D /* check (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check (2).png"; sourceTree = "<group>"; };
+		653FC9D51CDC074900446397 /* OkButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkButtonView.swift; sourceTree = "<group>"; };
 		658665721CD386A600172395 /* WarningViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningViewCell.swift; sourceTree = "<group>"; };
 		658665751CD386F500172395 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +133,7 @@
 		6507A11B1C15906E00E6228F /* TeethReminder */ = {
 			isa = PBXGroup;
 			children = (
+				653FC9D41CDC073500446397 /* Views */,
 				658665741CD386C300172395 /* Styles */,
 				653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */,
 				653A2DF91C8F240300D5DB45 /* HelpViewController.swift */,
@@ -146,9 +145,6 @@
 				6507A1201C15906E00E6228F /* Main.storyboard */,
 				6507A1231C15906E00E6228F /* Assets.xcassets */,
 				651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */,
-				6547EA851CD6680D00E4297D /* check (3).png */,
-				6547EA891CD6689A00E4297D /* check (2).png */,
-				6547EA871CD6687D00E4297D /* check (1).png */,
 				6507A1251C15906E00E6228F /* LaunchScreen.storyboard */,
 				6507A1281C15906E00E6228F /* Info.plist */,
 				652824C51C1881270017A7FF /* SetTimeViewController.swift */,
@@ -172,6 +168,14 @@
 				6507A13E1C15906F00E6228F /* Info.plist */,
 			);
 			path = TeethReminderUITests;
+			sourceTree = "<group>";
+		};
+		653FC9D41CDC073500446397 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				653FC9D51CDC074900446397 /* OkButtonView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		658665741CD386C300172395 /* Styles */ = {
@@ -288,11 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6507A1271C15906E00E6228F /* LaunchScreen.storyboard in Resources */,
-				6547EA861CD6680D00E4297D /* check (3).png in Resources */,
-				6547EA881CD6687D00E4297D /* check (1).png in Resources */,
 				6507A1241C15906E00E6228F /* Assets.xcassets in Resources */,
 				6507A1221C15906E00E6228F /* Main.storyboard in Resources */,
-				6547EA8A1CD6689A00E4297D /* check (2).png in Resources */,
 				651DC7781C2764AC0022B9AB /* Travel-Warning-min.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653FC9D61CDC074900446397 /* OkButtonView.swift in Sources */,
 				658665761CD386F500172395 /* Styles.swift in Sources */,
 				652824C61C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				658665731CD386A600172395 /* WarningViewCell.swift in Sources */,
@@ -334,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653FC9D71CDC11B500446397 /* OkButtonView.swift in Sources */,
 				652824C71C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				653A2DFB1C8F240300D5DB45 /* HelpViewController.swift in Sources */,
 				652824BF1C1636D20017A7FF /* Reminder.swift in Sources */,
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653FC9D81CDC11B600446397 /* OkButtonView.swift in Sources */,
 				652824C81C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				653A2DFC1C8F240300D5DB45 /* HelpViewController.swift in Sources */,
 				652824C01C1636D20017A7FF /* Reminder.swift in Sources */,

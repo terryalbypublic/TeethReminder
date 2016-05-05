@@ -12,6 +12,11 @@ public enum BackgroundColor {
     case Blue; case Grey; case White
 }
 
+public enum ButtonBackgroundColor {
+    case Blue; case BlueHighlighted; case White
+}
+
+
 public enum FontColor{
     case White; case Blue
 }
@@ -69,6 +74,22 @@ public class Styles : NSObject {
         return UIColor.blackColor()
     }
     
+    
+    public static func buttonBackgroundColor(color:ButtonBackgroundColor) -> UIColor{
+        if(color == .Blue){
+            return UIColor(red:19/255, green:85/255, blue:181/255, alpha:1)
+        }
+            
+        else if(color == .BlueHighlighted){
+            return UIColor(red:19/255, green:100/255, blue:181/255, alpha:1)
+        }
+            
+            
+        else if(color == .White){
+            return UIColor.whiteColor()
+        }
+        return UIColor.blackColor()
+    }
     
     
 
