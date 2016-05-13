@@ -32,7 +32,7 @@ public class Styles : NSObject {
     // static methods
     public static func tableViewBackgroundColor() -> UIColor{
         if(tableViewBackgroundColorConfig == .Blue){
-            return UIColor(red: 33/255, green: 134/255, blue: 239/255, alpha: 1)
+            return blueColor()
         }
         return UIColor.blackColor()
     }
@@ -51,12 +51,11 @@ public class Styles : NSObject {
         else{
             return 140
         }
-
     }
     
     public static func navigationBackgroundColor() -> UIColor{
         if(navigationTableViewBackgroundColorConfig == .Grey){
-            return UIColor(red: 218/255, green: 211/255, blue: 224/255, alpha: 1)
+            return greyColor()
         }
         else if(navigationTableViewBackgroundColorConfig == .White){
             return UIColor.whiteColor()
@@ -66,7 +65,7 @@ public class Styles : NSObject {
     
     public static func fontColor(fontColor:FontColor) -> UIColor{
         if(fontColor == .Blue){
-            return UIColor(red:19/255, green:85/255, blue:181/255, alpha:1)
+            return blueColor()
         }
         else if(fontColor == .White){
             return UIColor.whiteColor()
@@ -77,11 +76,11 @@ public class Styles : NSObject {
     
     public static func buttonBackgroundColor(color:ButtonBackgroundColor) -> UIColor{
         if(color == .Blue){
-            return UIColor(red:19/255, green:85/255, blue:181/255, alpha:1)
+            return blueColor()
         }
             
         else if(color == .BlueHighlighted){
-            return UIColor(red:19/255, green:100/255, blue:181/255, alpha:1)
+            return blueHighlightedColor()
         }
             
             
@@ -89,6 +88,18 @@ public class Styles : NSObject {
             return UIColor.whiteColor()
         }
         return UIColor.blackColor()
+    }
+    
+    private static func blueColor()->UIColor{
+        return UIColor(red:19/255, green:85/255, blue:181/255, alpha:1)
+    }
+    
+    private static func greyColor()->UIColor{
+        return UIColor(red: 218/255, green: 211/255, blue: 224/255, alpha: 1)
+    }
+    
+    private static func blueHighlightedColor()->UIColor{
+        return UIColor(red:19/255, green:100/255, blue:181/255, alpha:1)
     }
     
     
