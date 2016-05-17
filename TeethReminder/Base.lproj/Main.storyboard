@@ -185,7 +185,7 @@
             </objects>
             <point key="canvasLocation" x="1924" y="582"/>
         </scene>
-        <!--Item-->
+        <!--Brush-->
         <scene sceneID="wXS-Td-Lzw">
             <objects>
                 <viewController id="iiQ-Q2-4jx" customClass="TimerViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                             <constraint firstItem="MHz-sD-LyI" firstAttribute="centerY" secondItem="ZdC-hx-qyg" secondAttribute="centerY" id="ts9-mb-AMW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="g2a-cu-7T3"/>
+                    <tabBarItem key="tabBarItem" title="Brush" image="Tooth" id="g2a-cu-7T3"/>
                     <connections>
                         <outlet property="timerView" destination="MHz-sD-LyI" id="Rvq-NY-Mdm"/>
                     </connections>
@@ -319,11 +319,11 @@
             </objects>
             <point key="canvasLocation" x="367" y="1399"/>
         </scene>
-        <!--Item-->
+        <!--Reminders-->
         <scene sceneID="Erc-qF-XSY">
             <objects>
                 <navigationController id="nte-4F-6fr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="O3p-2v-m77"/>
+                    <tabBarItem key="tabBarItem" title="Reminders" image="Reminder" id="O3p-2v-m77"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TgX-ou-XgF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -356,6 +356,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Reminder" width="30" height="30"/>
+        <image name="Tooth" width="30" height="30"/>
         <image name="Travel-Warning-min.png" width="600" height="500"/>
     </resources>
 </document>
