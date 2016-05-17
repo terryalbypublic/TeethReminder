@@ -111,7 +111,7 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         return pickerDataHours.count;
     }
     
-    public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String! {
+    public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String? {
         if(component == 1){
             return pickerDataMinutes[row]
         }

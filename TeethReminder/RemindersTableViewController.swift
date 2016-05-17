@@ -40,7 +40,7 @@ public class RemindersTableViewController: UITableViewController {
     @IBAction func helpButtonTapped(sender: AnyObject) {
         self.helpViewController = getHelpViewController() as! HelpViewController
         self.navigationController!.view.addSubview(helpViewController.view)
-        helpViewController.closeButtonTapped.addTarget(self, action: "closeHelpView:", forControlEvents: UIControlEvents.TouchUpInside)
+        helpViewController.closeButtonTapped.addTarget(self, action: #selector(RemindersTableViewController.closeHelpView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.animateOpenView(self.helpViewController.view)
     }
     
@@ -109,7 +109,7 @@ public class RemindersTableViewController: UITableViewController {
         // if the user tap on allow notifications, the method allowPushTapped is called
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "allowPushTapped",
+            selector: #selector(RemindersTableViewController.allowPushTapped),
             name: GlobalConstants.userNotificationKey,
             object: nil)
         
@@ -201,7 +201,7 @@ public class RemindersTableViewController: UITableViewController {
         self.timeViewController.reminder = reminder
         self.timeViewController.refresh()
         self.navigationController!.view.addSubview(timeViewController.view)
-        timeViewController.saveButton.addTarget(self, action: "closeTimeView:", forControlEvents: UIControlEvents.TouchUpInside)
+        timeViewController.saveButton.addTarget(self, action: #selector(RemindersTableViewController.closeTimeView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.animateOpenView(self.timeViewController.view)
     }
     
