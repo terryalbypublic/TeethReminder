@@ -10,6 +10,7 @@ import UIKit
 
 class TimerViewController: UIViewController {
 
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var timerView: TimerView!
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class TimerViewController: UIViewController {
         self.timerView.addGestureRecognizer(gesture)
         self.view.backgroundColor = Styles.tableViewBackgroundColor()
         self.timerView.backgroundColor = Styles.tableViewBackgroundColor()
+        self.resetButton.hidden=true
 
         // Do any additional setup after loading the view.
     }
@@ -31,11 +33,19 @@ class TimerViewController: UIViewController {
     func timerTapped() {
         if(timerView.isRunning){
             timerView.stopTimer()
+            self.resetButton.hidden=false
         }
         else if(timerView.isLoaded){
             timerView.startTimerAnimation()
+            self.resetButton.hidden=true
         }
     }
+    
+    @IBAction func resetButtonTapped(sender: AnyObject) {
+        timerView.resetTimer()
+        self.resetButton.hidden = true
+    }
+ 
     
 
     /*

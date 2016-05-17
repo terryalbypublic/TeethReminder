@@ -235,15 +235,28 @@
                                     <outlet property="timerLabel" destination="Ggo-oE-J7v" id="QHn-xw-Uzc"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-cn-DRt">
+                                <rect key="frame" x="281" y="430" width="39" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="iiQ-Q2-4jx" eventType="touchUpInside" id="gzl-Nv-M16"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MHz-sD-LyI" firstAttribute="centerX" secondItem="ZdC-hx-qyg" secondAttribute="centerX" id="0q7-P8-Laz"/>
+                            <constraint firstItem="GP6-cn-DRt" firstAttribute="centerX" secondItem="ZdC-hx-qyg" secondAttribute="centerX" id="2Jy-Nb-KeZ"/>
+                            <constraint firstItem="GP6-cn-DRt" firstAttribute="top" secondItem="MHz-sD-LyI" secondAttribute="bottom" constant="-30" id="Ywc-Ta-usb"/>
                             <constraint firstItem="MHz-sD-LyI" firstAttribute="centerY" secondItem="ZdC-hx-qyg" secondAttribute="centerY" id="ts9-mb-AMW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Brush" image="Tooth" id="g2a-cu-7T3"/>
                     <connections>
+                        <outlet property="resetButton" destination="GP6-cn-DRt" id="EBe-Y2-W4f"/>
                         <outlet property="timerView" destination="MHz-sD-LyI" id="Rvq-NY-Mdm"/>
                     </connections>
                 </viewController>
