@@ -77,8 +77,8 @@
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-ba-5Lv">
                                             <rect key="frame" x="523" y="84" width="51" height="31"/>
                                             <color key="tintColor" red="0.85385457691628464" green="0.9086661912315025" blue="0.9451121794902565" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="onTintColor" red="0.86222742600000002" green="0.81830529380000006" blue="0.87928685890000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="thumbTintColor" red="0.095217240069913237" green="0.2850474702126401" blue="0.72085188520260346" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="onTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="thumbTintColor" red="0.56549346519999999" green="0.72192766799999997" blue="0.89236630829999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="switchButtonTapped:" destination="Dvd-Qj-LrJ" eventType="valueChanged" id="hkx-m4-766"/>
                                             </connections>
