@@ -23,6 +23,7 @@ let π:CGFloat = CGFloat(M_PI)
     
     public var isLoaded = false
     public var isRunning = false
+    public var isFinished = false
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
     var loadTimerPortions = 0
@@ -99,7 +100,7 @@ let π:CGFloat = CGFloat(M_PI)
     
     // animation when the timer is started
     public func startTimerAnimation(){
-        if(self.isLoaded && !self.isRunning){
+        if(self.isLoaded && !self.isRunning && !isFinished){
             self.startLabel.text = "Stop"
             self.isRunning = true
             self.timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
@@ -107,12 +108,16 @@ let π:CGFloat = CGFloat(M_PI)
             self.displayLinkTimer = CADisplayLink(target: self, selector: #selector(updateTimer))
             displayLinkTimer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         }
+        else if(isFinished){
+            resetTimer()
+        }
     }
     
     // set timer to the initial time
     public func resetTimer(){
         if(isLoaded){
             isRunning = false
+            isFinished = false
             self.startLabel.text = "Start"
             self.ellapsedTime = 0
             self.timer.invalidate()
@@ -141,11 +146,11 @@ let π:CGFloat = CGFloat(M_PI)
         if(ellapsedTime == InitialMilliseconds){
             self.displayLinkTimer.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             self.isLoaded = true
-            
+            self.isRunning = false
+            self.isFinished = true
+            self.startLabel.text = "Finished!"
         }
-        else{
-            self.setNeedsDisplay()
-        }
+        self.setNeedsDisplay()
     }
     
     func updateLoading(){
