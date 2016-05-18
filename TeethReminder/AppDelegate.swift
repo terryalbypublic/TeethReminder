@@ -24,13 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
 
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-
+        
+        // open the second tab bar menu if the user opened from the notification
+        if (launchOptions != nil && ((launchOptions![UIApplicationLaunchOptionsRemoteNotificationKey]) != nil)) {
+            let tabBar = window?.rootViewController as! UITabBarController
+            tabBar.selectedIndex=1
+        }
         
         return true
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings){
        NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.userNotificationKey, object: self)
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        // open the second tab bar menu if the user opened from the notification
+        let tabBar = window?.rootViewController as! UITabBarController
+        tabBar.selectedIndex=1
     }
 
     func applicationWillResignActive(application: UIApplication) {
