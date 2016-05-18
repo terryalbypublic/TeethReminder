@@ -42,10 +42,9 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(sender: AnyObject) {
-        if(!self.resetButton.hidden){
-            timerView.resetTimer()
-            self.resetButton.hidden = true
-        }
+        timerView.resetTimer()
+        self.resetButton.hidden = true
+        
     }
  
     
