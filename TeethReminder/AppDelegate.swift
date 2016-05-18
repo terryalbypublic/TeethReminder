@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
         // open the second tab bar menu if the user opened from the notification
-        if (launchOptions != nil && ((launchOptions![UIApplicationLaunchOptionsRemoteNotificationKey]) != nil)) {
+        if (launchOptions != nil) {
             let tabBar = window?.rootViewController as! UITabBarController
             tabBar.selectedIndex=1
         }
