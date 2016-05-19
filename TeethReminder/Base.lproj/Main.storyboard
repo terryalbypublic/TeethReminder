@@ -198,7 +198,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHz-sD-LyI" customClass="TimerView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="145" y="145" width="310" height="310"/>
+                                <rect key="frame" x="145" y="115" width="310" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggo-oE-J7v">
                                         <rect key="frame" x="59" y="113" width="192" height="84"/>
@@ -236,7 +236,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-cn-DRt">
-                                <rect key="frame" x="281" y="465" width="39" height="30"/>
+                                <rect key="frame" x="281" y="435" width="39" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -251,7 +251,7 @@
                             <constraint firstItem="MHz-sD-LyI" firstAttribute="centerX" secondItem="ZdC-hx-qyg" secondAttribute="centerX" id="0q7-P8-Laz"/>
                             <constraint firstItem="GP6-cn-DRt" firstAttribute="centerX" secondItem="ZdC-hx-qyg" secondAttribute="centerX" id="2Jy-Nb-KeZ"/>
                             <constraint firstItem="GP6-cn-DRt" firstAttribute="top" secondItem="MHz-sD-LyI" secondAttribute="bottom" constant="10" id="Ywc-Ta-usb"/>
-                            <constraint firstItem="MHz-sD-LyI" firstAttribute="centerY" secondItem="ZdC-hx-qyg" secondAttribute="centerY" id="ts9-mb-AMW"/>
+                            <constraint firstItem="MHz-sD-LyI" firstAttribute="centerY" secondItem="ZdC-hx-qyg" secondAttribute="centerY" constant="-30" id="ts9-mb-AMW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Brush" image="Tooth" id="g2a-cu-7T3"/>
