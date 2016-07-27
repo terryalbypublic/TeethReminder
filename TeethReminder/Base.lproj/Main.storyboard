@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JzL-Q5-7aL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JzL-Q5-7aL">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -185,6 +184,34 @@
             </objects>
             <point key="canvasLocation" x="1924" y="582"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="fXY-M4-8GM">
+            <objects>
+                <viewController id="dHS-u6-6rd" customClass="VideoViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LZE-rY-1Pa"/>
+                        <viewControllerLayoutGuide type="bottom" id="2dA-uc-IUG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R1q-N9-FJ6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiZ-nu-nBt">
+                                <rect key="frame" x="0.0" y="180" width="600" height="237"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ay1-hO-PKQ"/>
+                    <connections>
+                        <outlet property="videoView" destination="TiZ-nu-nBt" id="DcU-SA-FMq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUD-b0-JZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964" y="1107"/>
+        </scene>
         <!--Brush-->
         <scene sceneID="wXS-Td-Lzw">
             <objects>
@@ -361,6 +388,7 @@
                     <connections>
                         <segue destination="nte-4F-6fr" kind="relationship" relationship="viewControllers" id="J8E-sp-KAc"/>
                         <segue destination="iiQ-Q2-4jx" kind="relationship" relationship="viewControllers" id="mdr-z2-ccX"/>
+                        <segue destination="dHS-u6-6rd" kind="relationship" relationship="viewControllers" id="YyO-WY-xaN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6t-Uf-mHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
