@@ -116,6 +116,7 @@ class VideoViewController : UIViewController {
         playerViewController.view.backgroundColor = UIColor.whiteColor()
         playerViewController.view.frame.size.width = self.videoView.frame.size.width
         playerViewController.view.frame.size.height = self.videoView.frame.size.height
+        playerViewController.view.frame.origin.y += 1.5
         self.videoView.addSubview(playerViewController.view)
         playerViewController.player!.play()
     }
