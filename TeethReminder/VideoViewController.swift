@@ -45,6 +45,8 @@ class VideoViewController : UIViewController {
     deinit {
         // make sure to remove the observer when this view controller is dismissed/deallocated
         NSNotificationCenter.defaultCenter().removeObserver(foregroundNotification)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
     }
     
     
@@ -118,6 +120,13 @@ class VideoViewController : UIViewController {
         playerViewController.view.frame.size.height = self.videoView.frame.size.height
         playerViewController.view.frame.origin.y += 1.5
         self.videoView.addSubview(playerViewController.view)
+        
+        // Invoke after player is created and AVPlayerItem is specified
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(playerItemDidReachEnd),
+                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         object: player.currentItem)
+        
         playerViewController.player!.play()
     }
     
@@ -129,6 +138,11 @@ class VideoViewController : UIViewController {
         if(self.playerViewController.player != nil && self.playerViewController.player?.status == AVPlayerStatus.ReadyToPlay){
             self.playerViewController.player?.play()
         }
+    }
+    
+    func playerItemDidReachEnd(notification: NSNotification) {
+        self.playerViewController.player!.seekToTime(kCMTimeZero)
+        self.playerViewController.player!.play()
     }
     
 
