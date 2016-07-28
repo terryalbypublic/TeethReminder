@@ -113,7 +113,7 @@ class VideoViewController : UIViewController {
         let filePath = NSBundle.mainBundle().pathForResource("teeth", ofType: "mp4")
         let asset = AVURLAsset.init(URL: NSURL(fileURLWithPath:filePath!), options: nil)
         let player = AVPlayer(playerItem: AVPlayerItem(asset: asset))
-        playerViewController.showsPlaybackControls = false
+        playerViewController.showsPlaybackControls = true
         playerViewController.player = player
         playerViewController.view.backgroundColor = UIColor.whiteColor()
         playerViewController.view.frame.size.width = self.videoView.frame.size.width
