@@ -17,14 +17,22 @@ class VideoViewController : UIViewController {
     let indicator = UIActivityIndicatorView()
     let playerViewController = AVPlayerViewController()
     private var foregroundNotification: NSObjectProtocol!
-    let resourceRequest = NSBundleResourceRequest(tags: NSSet(array: ["teethvideo"]) as! Set<String>)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupObservers()
         self.setupUI()
-        self.getResources()
-        // Do any additional setup after loading the view.
+        
+        if(OndemandResources.videoDownloaded){
+            self.startVideo()
+        }
+    }
+    
+    private func setupObservers(){
+        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadFinished), name: "videoDownloadFinished", object: nil)
+        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadStarted), name: "videoDownloadStarted", object: nil)
+        OndemandResources.resourceRequest.progress.addObserver(self, forKeyPath: "fractionCompleted", options: [.New, .Initial], context: nil)
         
         foregroundNotification = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillEnterForegroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) {
             [unowned self] notification in
@@ -32,8 +40,6 @@ class VideoViewController : UIViewController {
             self.continueVideo()
             // do whatever you want when the app is brought back to the foreground
         }
-        
-        
     }
     
     deinit {
@@ -41,68 +47,44 @@ class VideoViewController : UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(foregroundNotification)
     }
     
+    
+    func videoDownloadStarted(){
+        self.indicator.startAnimating()
+        self.startVideo()
+    }
+    
+    func videoDownloadFinished(){
+        self.indicator.stopAnimating()
+        if(OndemandResources.videoDownloaded){
+            self.startVideo()
+        }
+        else if(OndemandResources.errorCode > 0){
+            switch OndemandResources.errorCode{
+            case NSBundleOnDemandResourceOutOfSpaceError:
+                let message = "You don't have enough storage left to download this resource."
+                let alert = UIAlertController(title: "Not Enough Space",
+                                              message: message,
+                                              preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK",
+                    style: .Cancel, handler: nil))
+                self.presentViewController(alert, animated: true,
+                                           completion: nil)
+            case NSBundleOnDemandResourceExceededMaximumSizeError:
+                assert(false, "The bundle resource was too large.")
+            default:
+                assert(false, OndemandResources.errorCode.description)
+            }
+        }
+
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    private func getResources(){
-        
-        self.resourceRequest.conditionallyBeginAccessingResourcesWithCompletionHandler {(resourcesAvailable: Bool) -> Void in
-            
-            NSOperationQueue.mainQueue().addOperationWithBlock({
-                if resourcesAvailable {
-                    // Do something with the resources
-                    
-                    self.startVideo()
-                    
-                } else {
-                    
-                    // activity spinner
-                    self.indicator.startAnimating()
-                    
-                    // progress observer
-                    self.resourceRequest.progress.addObserver(self,
-                        forKeyPath: "fractionCompleted",
-                        options: [.New, .Initial],
-                        context: nil)
-                    
-                    self.resourceRequest.beginAccessingResourcesWithCompletionHandler {(err: NSError?) -> Void in
-                        
-                        self.resourceRequest.progress.removeObserver(self, forKeyPath: "fractionCompleted")
-                        
-                        // main queue
-                        NSOperationQueue.mainQueue().addOperationWithBlock({
-                            
-                            // activity spinner
-                            self.indicator.stopAnimating()
-                            
-                            if (err != nil) {
-                                switch err!.code{
-                                case NSBundleOnDemandResourceOutOfSpaceError:
-                                    let message = "You don't have enough storage left to download this resource."
-                                    let alert = UIAlertController(title: "Not Enough Space",
-                                        message: message,
-                                        preferredStyle: .Alert)
-                                    alert.addAction(UIAlertAction(title: "OK",
-                                        style: .Cancel, handler: nil))
-                                    self.presentViewController(alert, animated: true,
-                                        completion: nil)
-                                case NSBundleOnDemandResourceExceededMaximumSizeError:
-                                    assert(false, "The bundle resource was too large.")
-                                default:
-                                    assert(false, err!.description)
-                                }
-                            } else {
-                                // Do something with the resources
-                                self.startVideo()
-                            }
-                        })
-                    }
-                }
-            })
-        }
-    }
+
     
     private func setupUI(){
         self.videoView.frame = CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.width*0.75)
@@ -113,10 +95,10 @@ class VideoViewController : UIViewController {
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if(keyPath! == "fractionCompleted"){
-            NSLog(String(self.resourceRequest.progress.fractionCompleted))
+            NSLog(String(OndemandResources.resourceRequest.progress.fractionCompleted))
             
             NSOperationQueue.mainQueue().addOperationWithBlock({
-                self.loadingLabel.text = "Loading "+String(Int(self.resourceRequest.progress.fractionCompleted*100))+"%"
+                self.loadingLabel.text = "Loading "+String(Int(OndemandResources.resourceRequest.progress.fractionCompleted*100))+"%"
             })
         }
         else{
@@ -125,6 +107,7 @@ class VideoViewController : UIViewController {
     }
     
     private func startVideo(){
+        OndemandResources.notifications.removeObserver(self)
         let filePath = NSBundle.mainBundle().pathForResource("teeth", ofType: "mp4")
         let asset = AVURLAsset.init(URL: NSURL(fileURLWithPath:filePath!), options: nil)
         let player = AVPlayer(playerItem: AVPlayerItem(asset: asset))
@@ -147,15 +130,5 @@ class VideoViewController : UIViewController {
         }
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

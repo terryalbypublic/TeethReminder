@@ -184,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="1924" y="582"/>
         </scene>
-        <!--Item-->
+        <!--Tutorial-->
         <scene sceneID="fXY-M4-8GM">
             <objects>
                 <viewController id="dHS-u6-6rd" customClass="VideoViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
@@ -202,7 +202,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading 0%  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-Ig-8CS">
                                         <rect key="frame" x="251" y="150" width="98" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -221,7 +221,7 @@
                             <constraint firstItem="2dA-uc-IUG" firstAttribute="top" secondItem="TiZ-nu-nBt" secondAttribute="bottom" constant="134" id="XOg-hy-ddw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ay1-hO-PKQ"/>
+                    <tabBarItem key="tabBarItem" title="Tutorial" image="Play" id="ay1-hO-PKQ"/>
                     <connections>
                         <outlet property="loadingLabel" destination="HlD-Ig-8CS" id="wcU-B5-K8i"/>
                         <outlet property="videoView" destination="TiZ-nu-nBt" id="DcU-SA-FMq"/>
@@ -416,6 +416,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Play" width="50" height="50"/>
         <image name="Reminder" width="30" height="30"/>
         <image name="Tooth" width="30" height="30"/>
         <image name="Travel-Warning-min.png" width="600" height="500"/>

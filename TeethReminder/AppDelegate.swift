@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBar.selectedIndex=1
         }
         
+        // start fetching of video
+        OndemandResources.getResources()
+        
         return true
     }
     

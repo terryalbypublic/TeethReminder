@@ -44,8 +44,6 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         self.timePicker.selectRow(hour, inComponent: 0, animated: false)
         self.timePicker.selectRow(minutes, inComponent: 1, animated: false)
-        
-        
     }
     
     
