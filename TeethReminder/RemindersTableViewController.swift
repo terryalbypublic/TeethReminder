@@ -19,6 +19,8 @@ public class RemindersTableViewController: UITableViewController {
     var timeViewController = SetTimeViewController()
     var reminderList = ReminderList.sharedInstance
     var reminders = Array<Reminder>()
+    var isHelpViewOpen = false
+    var isTimeViewOpen = false
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,26 @@ public class RemindersTableViewController: UITableViewController {
     }
     
     @IBAction func helpButtonTapped(sender: AnyObject) {
-        self.helpViewController = getHelpViewController() as! HelpViewController
-        self.navigationController!.view.addSubview(helpViewController.view)
-        helpViewController.closeButtonTapped.addTarget(self, action: #selector(RemindersTableViewController.closeHelpView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        self.animateOpenView(self.helpViewController.view)
+        if(!isHelpViewOpen && !isTimeViewOpen){
+            isHelpViewOpen = true
+            self.helpViewController = getHelpViewController() as! HelpViewController
+            self.navigationController!.view.addSubview(helpViewController.view)
+            helpViewController.closeButtonTapped.addTarget(self, action: #selector(RemindersTableViewController.closeHelpView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            self.animateOpenView(self.helpViewController.view)
+        }
+    }
+    
+    private func openTimeView(row: Int){
+        if(!isHelpViewOpen && !isTimeViewOpen){
+            isTimeViewOpen = true
+            self.timeViewController = getTimeViewController() as! SetTimeViewController
+            let reminder = ReminderList.sharedInstance.reminders[row]
+            self.timeViewController.reminder = reminder
+            self.timeViewController.refresh()
+            self.navigationController!.view.addSubview(timeViewController.view)
+            timeViewController.saveButton.addTarget(self, action: #selector(RemindersTableViewController.closeTimeView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            self.animateOpenView(self.timeViewController.view)
+        }
     }
     
     
@@ -72,11 +90,13 @@ public class RemindersTableViewController: UITableViewController {
     }
     
     func closeHelpView(sender: AnyObject){
+        isHelpViewOpen = false
         self.animateCloseView(self.helpViewController.view)
         self.helpViewController.view.removeFromSuperview()
     }
     
     public func closeTimeView(sender: AnyObject){
+        isTimeViewOpen = false
         self.timeViewController.saveButtonTapped(sender)
         self.animateCloseView(self.timeViewController.view)
         self.timeViewController.view.removeFromSuperview()
@@ -195,14 +215,8 @@ public class RemindersTableViewController: UITableViewController {
             return;
         }
         
-        self.timeViewController = getTimeViewController() as! SetTimeViewController
-        let rowIndex = self.tableView.indexPathForSelectedRow?.row
-        let reminder = ReminderList.sharedInstance.reminders[rowIndex!]
-        self.timeViewController.reminder = reminder
-        self.timeViewController.refresh()
-        self.navigationController!.view.addSubview(timeViewController.view)
-        timeViewController.saveButton.addTarget(self, action: #selector(RemindersTableViewController.closeTimeView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        self.animateOpenView(self.timeViewController.view)
+        openTimeView(indexPath.row)
+        
     }
     
     func getTimeViewController() -> UIViewController{
