@@ -14,6 +14,7 @@ class VideoViewController : UIViewController {
 
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var videoView: UIView!
+    var errorView : UIView!
     let indicator = UIActivityIndicatorView()
     let playerViewController = AVPlayerViewController()
     private var foregroundNotification: NSObjectProtocol!
@@ -63,16 +64,7 @@ class VideoViewController : UIViewController {
         else if(OndemandResources.errorCode > 0){
             switch OndemandResources.errorCode{
             case NSBundleOnDemandResourceOutOfSpaceError:
-                let message = "You don't have enough storage left to download this resource."
-                let alert = UIAlertController(title: "Not Enough Space",
-                                              message: message,
-                                              preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "OK",
-                    style: .Cancel, handler: nil))
-                self.presentViewController(alert, animated: true,
-                                           completion: nil)
-            case NSBundleOnDemandResourceExceededMaximumSizeError:
-                assert(false, "The bundle resource was too large.")
+                self.view.addSubview(errorView)
             default:
                 assert(false, OndemandResources.errorCode.description)
             }
@@ -93,6 +85,10 @@ class VideoViewController : UIViewController {
         indicator.activityIndicatorViewStyle = .Gray
         indicator.center = view.center
         view.addSubview(indicator)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("warningViewController")
+        self.errorView = vc.view
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {

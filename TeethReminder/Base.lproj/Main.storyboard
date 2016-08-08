@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" generatesPrototypingConstraints="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="JzL-Q5-7aL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JzL-Q5-7aL">
     <dependencies>
         <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -15,15 +15,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Q6T-h6-hja"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vN6-IO-23J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
-                                <rect key="frame" x="28" y="20" width="320" height="216"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
+                                <rect key="frame" x="141" y="20" width="320" height="216"/>
                                 <color key="tintColor" red="0.09521724007" green="0.28504747019999999" blue="0.72085188519999999" alpha="1" colorSpace="calibratedRGB"/>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-iJ-S9X" customClass="OkButtonView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="299" y="555" width="60" height="60"/>
+                                <rect key="frame" x="520" y="488" width="60" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="B2W-xS-QZg"/>
@@ -61,20 +61,20 @@
             <objects>
                 <tableViewController title="Teeth Reminders" id="ayQ-vF-cuE" customClass="RemindersTableViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="OeD-pZ-cfG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" id="Dvd-Qj-LrJ" customClass="ReminderViewCell" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dvd-Qj-LrJ" id="FqZ-bP-7ff">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-ba-5Lv">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-ba-5Lv">
                                             <rect key="frame" x="298" y="84" width="51" height="31"/>
                                             <color key="tintColor" red="0.85385457691628464" green="0.9086661912315025" blue="0.9451121794902565" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="onTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +103,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKE-pV-gB8">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKE-pV-gB8">
                                             <rect key="frame" x="273" y="9" width="100" height="181"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="Dj0-sJ-xcY"/>
@@ -112,7 +112,7 @@
                                                 <action selector="OnOffButtonTapped:" destination="Dvd-Qj-LrJ" eventType="touchUpInside" id="O1l-al-2Ql"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-FH-kPf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-FH-kPf">
                                             <rect key="frame" x="253" y="89" width="25" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,10 +147,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WarningCell" rowHeight="70" id="JGa-3Y-4uA" customClass="WarningViewCell" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="292" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="292" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGa-3Y-4uA" id="IsM-g7-3tt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-IR-hSg">
@@ -194,14 +194,14 @@
                         <viewControllerLayoutGuide type="bottom" id="2dA-uc-IUG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R1q-N9-FJ6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TiZ-nu-nBt">
-                                <rect key="frame" x="0.0" y="183" width="375" height="301"/>
+                                <rect key="frame" x="0.0" y="183" width="600" height="234"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading 0%  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-Ig-8CS">
-                                        <rect key="frame" x="139" y="217" width="98" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading 0%  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-Ig-8CS">
+                                        <rect key="frame" x="252" y="150" width="98" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -232,6 +232,46 @@
             </objects>
             <point key="canvasLocation" x="2964" y="1107"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="pta-vb-pzg">
+            <objects>
+                <viewController storyboardIdentifier="warningViewController" id="Xdv-ZG-qrm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZd-8g-5Ko"/>
+                        <viewControllerLayoutGuide type="bottom" id="k5P-cP-21a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bby-Um-ao9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning" translatesAutoresizingMaskIntoConstraints="NO" id="Tdg-Bn-bQC">
+                                <rect key="frame" x="209" y="209" width="182" height="182"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have enough storage left to download the tutorial." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crl-BW-hrW">
+                                <rect key="frame" x="140" y="377" width="320" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="C8r-7u-HqK"/>
+                                    <constraint firstAttribute="height" constant="74" id="UXz-bn-386"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="gAr-Lc-WLI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="crl-BW-hrW" firstAttribute="centerX" secondItem="Tdg-Bn-bQC" secondAttribute="centerX" id="GhR-hH-ik6"/>
+                            <constraint firstItem="Tdg-Bn-bQC" firstAttribute="centerY" secondItem="Bby-Um-ao9" secondAttribute="centerY" id="giM-xQ-WPu"/>
+                            <constraint firstItem="crl-BW-hrW" firstAttribute="top" secondItem="Tdg-Bn-bQC" secondAttribute="bottom" constant="-14" id="mLB-NK-zep"/>
+                            <constraint firstItem="Tdg-Bn-bQC" firstAttribute="centerX" secondItem="Bby-Um-ao9" secondAttribute="centerX" id="o9O-7h-eqQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ad-U9-I2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3009" y="2178"/>
+        </scene>
         <!--Brush-->
         <scene sceneID="wXS-Td-Lzw">
             <objects>
@@ -241,11 +281,11 @@
                         <viewControllerLayoutGuide type="bottom" id="JCE-TI-egC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZdC-hx-qyg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHz-sD-LyI" customClass="TimerView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="33" y="149" width="310" height="310"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHz-sD-LyI" customClass="TimerView" customModule="TeethReminder" customModuleProvider="target">
+                                <rect key="frame" x="146" y="116" width="310" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggo-oE-J7v">
                                         <rect key="frame" x="59" y="113" width="192" height="84"/>
@@ -282,8 +322,8 @@
                                     <outlet property="timerLabel" destination="Ggo-oE-J7v" id="QHn-xw-Uzc"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-cn-DRt">
-                                <rect key="frame" x="168" y="469" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-cn-DRt">
+                                <rect key="frame" x="281" y="436" width="39" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -320,7 +360,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bod-e3-4oL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jEM-Gd-DMl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfa-np-bi7">
@@ -355,7 +395,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNx-3v-cT6" customClass="OkButtonView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="299" y="599" width="60" height="60"/>
+                                <rect key="frame" x="520" y="532" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2r1-hJ-2SK"/>
                                     <constraint firstAttribute="width" constant="60" id="Add-55-lRb"/>
@@ -421,5 +461,6 @@
         <image name="Reminder" width="30" height="30"/>
         <image name="Tooth" width="30" height="30"/>
         <image name="Travel-Warning-min.png" width="600" height="500"/>
+        <image name="warning" width="182" height="182"/>
     </resources>
 </document>
