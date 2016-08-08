@@ -62,19 +62,32 @@ public class ReminderList: NSObject{
         
         let reminder1 = Reminder()
         
-        reminder1.datetime = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let datecomponents = NSDateComponents()
+        
+        
+        datecomponents.minute = 0
+        datecomponents.hour = 8
+        
+        reminder1.datetime = calendar.dateFromComponents(datecomponents)!
         reminder1.name = "Reminder for the Morning"
         reminder1.isActive = false
         
         let reminder2 = Reminder()
         
-        reminder2.datetime = NSDate()
+        datecomponents.minute = 0
+        datecomponents.hour = 13
+        
+        reminder2.datetime = calendar.dateFromComponents(datecomponents)!
         reminder2.name = "Reminder for the Afternoon"
         reminder2.isActive = false
         
         let reminder3 = Reminder()
         
-        reminder3.datetime = NSDate()
+        datecomponents.minute = 0
+        datecomponents.hour = 21
+        
+        reminder3.datetime = calendar.dateFromComponents(datecomponents)!
         reminder3.name = "Reminder for the Evening"
         reminder3.isActive = false
         

@@ -130,7 +130,6 @@ let π:CGFloat = CGFloat(M_PI)
     
     
     // private methods
-    
     func updateTime(){
         self.ellapsedTime += 50;
     }

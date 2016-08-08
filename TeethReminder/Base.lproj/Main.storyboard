@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JzL-Q5-7aL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" generatesPrototypingConstraints="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="JzL-Q5-7aL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,16 +15,16 @@
                         <viewControllerLayoutGuide type="bottom" id="Q6T-h6-hja"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vN6-IO-23J">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-MH-1f1">
-                                <rect key="frame" x="140" y="20" width="320" height="216"/>
+                                <rect key="frame" x="28" y="20" width="320" height="216"/>
                                 <color key="tintColor" red="0.09521724007" green="0.28504747019999999" blue="0.72085188519999999" alpha="1" colorSpace="calibratedRGB"/>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-iJ-S9X" customClass="OkButtonView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="520" y="488" width="60" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="299" y="555" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="B2W-xS-QZg"/>
                                     <constraint firstAttribute="width" constant="60" id="cUg-fc-8i6"/>
@@ -33,7 +34,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="RsL-MH-1f1" firstAttribute="centerX" secondItem="vN6-IO-23J" secondAttribute="centerX" id="CYB-Mb-QPB"/>
                             <constraint firstItem="Q6T-h6-hja" firstAttribute="top" secondItem="XXl-iJ-S9X" secondAttribute="bottom" constant="8" id="QQW-Cs-YLW"/>
@@ -59,22 +60,22 @@
         <scene sceneID="NEj-TC-PQh">
             <objects>
                 <tableViewController title="Teeth Reminders" id="ayQ-vF-cuE" customClass="RemindersTableViewController" customModule="TeethReminder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="OeD-pZ-cfG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="OeD-pZ-cfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" id="Dvd-Qj-LrJ" customClass="ReminderViewCell" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dvd-Qj-LrJ" id="FqZ-bP-7ff">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-ba-5Lv">
-                                            <rect key="frame" x="523" y="84" width="51" height="31"/>
+                                            <rect key="frame" x="298" y="84" width="51" height="31"/>
                                             <color key="tintColor" red="0.85385457691628464" green="0.9086661912315025" blue="0.9451121794902565" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="onTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="thumbTintColor" red="0.56549346519999999" green="0.72192766799999997" blue="0.89236630829999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +104,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKE-pV-gB8">
-                                            <rect key="frame" x="498" y="9" width="100" height="181"/>
+                                            <rect key="frame" x="273" y="9" width="100" height="181"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="Dj0-sJ-xcY"/>
                                             </constraints>
@@ -112,9 +113,9 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abw-FH-kPf">
-                                            <rect key="frame" x="478" y="89" width="25" height="21"/>
+                                            <rect key="frame" x="253" y="89" width="25" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -146,17 +147,17 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WarningCell" rowHeight="70" id="JGa-3Y-4uA" customClass="WarningViewCell" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="292" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="292" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JGa-3Y-4uA" id="IsM-g7-3tt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJl-IR-hSg">
                                             <rect key="frame" x="12" y="0.0" width="306" height="49"/>
                                             <string key="text">The notifications for TeethReminder are disabled. To enable it go to: Settings &gt; Notifications &gt; TeethReminder &gt; Allow Notifications</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Travel-Warning-min.png" translatesAutoresizingMaskIntoConstraints="NO" id="ebW-BN-AFi">
@@ -193,27 +194,27 @@
                         <viewControllerLayoutGuide type="bottom" id="2dA-uc-IUG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R1q-N9-FJ6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TiZ-nu-nBt">
-                                <rect key="frame" x="0.0" y="183" width="600" height="234"/>
+                                <rect key="frame" x="0.0" y="183" width="375" height="301"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading 0%  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-Ig-8CS">
-                                        <rect key="frame" x="251" y="150" width="98" height="21"/>
+                                        <rect key="frame" x="139" y="217" width="98" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="HlD-Ig-8CS" firstAttribute="centerX" secondItem="TiZ-nu-nBt" secondAttribute="centerX" id="LTI-pv-Sp8"/>
                                     <constraint firstAttribute="bottom" secondItem="HlD-Ig-8CS" secondAttribute="bottom" constant="63" id="dBQ-sh-c3J"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="TiZ-nu-nBt" firstAttribute="centerY" secondItem="R1q-N9-FJ6" secondAttribute="centerY" id="2c3-Ju-pdh"/>
                             <constraint firstItem="TiZ-nu-nBt" firstAttribute="leading" secondItem="R1q-N9-FJ6" secondAttribute="leading" id="7hd-vW-Aq2"/>
@@ -240,26 +241,26 @@
                         <viewControllerLayoutGuide type="bottom" id="JCE-TI-egC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZdC-hx-qyg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHz-sD-LyI" customClass="TimerView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="145" y="115" width="310" height="310"/>
+                                <rect key="frame" x="33" y="149" width="310" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggo-oE-J7v">
                                         <rect key="frame" x="59" y="113" width="192" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPf-vf-kAm">
                                         <rect key="frame" x="116" y="207" width="78" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ggo-oE-J7v" firstAttribute="centerY" secondItem="MHz-sD-LyI" secondAttribute="centerY" id="1cV-QB-mfk"/>
                                     <constraint firstItem="LPf-vf-kAm" firstAttribute="top" secondItem="Ggo-oE-J7v" secondAttribute="bottom" constant="10" id="Io3-qF-SpU"/>
@@ -282,7 +283,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-cn-DRt">
-                                <rect key="frame" x="281" y="435" width="39" height="30"/>
+                                <rect key="frame" x="168" y="469" width="39" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -292,7 +293,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MHz-sD-LyI" firstAttribute="centerX" secondItem="ZdC-hx-qyg" secondAttribute="centerX" id="0q7-P8-Laz"/>
                             <constraint firstItem="GP6-cn-DRt" firstAttribute="centerX" secondItem="ZdC-hx-qyg" secondAttribute="centerX" id="2Jy-Nb-KeZ"/>
@@ -319,7 +320,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bod-e3-4oL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jEM-Gd-DMl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfa-np-bi7">
@@ -354,7 +355,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNx-3v-cT6" customClass="OkButtonView" customModule="TeethReminder" customModuleProvider="target">
-                                <rect key="frame" x="520" y="532" width="60" height="60"/>
+                                <rect key="frame" x="299" y="599" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2r1-hJ-2SK"/>
                                     <constraint firstAttribute="width" constant="60" id="Add-55-lRb"/>
@@ -364,7 +365,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="BNx-3v-cT6" secondAttribute="trailing" id="Pof-c5-2ds"/>
                             <constraint firstItem="bod-e3-4oL" firstAttribute="top" secondItem="BNx-3v-cT6" secondAttribute="bottom" constant="8" id="Tll-As-eWY"/>
@@ -402,7 +403,7 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="b2s-x7-yZp">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="nte-4F-6fr" kind="relationship" relationship="viewControllers" id="J8E-sp-KAc"/>
