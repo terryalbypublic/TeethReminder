@@ -206,9 +206,17 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dKc-ny-krA">
+                                        <rect key="frame" x="225" y="179" width="150" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="fLZ-Xd-oa2"/>
+                                        </constraints>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dKc-ny-krA" firstAttribute="top" secondItem="HlD-Ig-8CS" secondAttribute="bottom" constant="8" id="Cgl-2g-XGG"/>
+                                    <constraint firstItem="dKc-ny-krA" firstAttribute="centerX" secondItem="TiZ-nu-nBt" secondAttribute="centerX" id="Hbm-ff-4MF"/>
                                     <constraint firstItem="HlD-Ig-8CS" firstAttribute="centerX" secondItem="TiZ-nu-nBt" secondAttribute="centerX" id="LTI-pv-Sp8"/>
                                     <constraint firstAttribute="bottom" secondItem="HlD-Ig-8CS" secondAttribute="bottom" constant="63" id="dBQ-sh-c3J"/>
                                 </constraints>
@@ -225,6 +233,7 @@
                     <tabBarItem key="tabBarItem" title="Tutorial" image="Play" id="ay1-hO-PKQ"/>
                     <connections>
                         <outlet property="loadingLabel" destination="HlD-Ig-8CS" id="wcU-B5-K8i"/>
+                        <outlet property="loadingView" destination="dKc-ny-krA" id="qWL-NF-ExJ"/>
                         <outlet property="videoView" destination="TiZ-nu-nBt" id="DcU-SA-FMq"/>
                     </connections>
                 </viewController>

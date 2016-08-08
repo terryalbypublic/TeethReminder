@@ -1029,11 +1029,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380499.579785"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156">
+            startingLineNumber = "158"
+            endingLineNumber = "158">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1043,11 +1043,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380499.579785"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155">
+            startingLineNumber = "157"
+            endingLineNumber = "157">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1057,11 +1057,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380499.579785"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146">
+            startingLineNumber = "148"
+            endingLineNumber = "148">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1087,11 +1087,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380075.449565"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1103,11 +1103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380499.579785"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173">
+            startingLineNumber = "175"
+            endingLineNumber = "175">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1117,11 +1117,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380075.449565"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "videoDownloadStarted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1133,11 +1133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380075.449565"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "videoDownloadFinished()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1149,11 +1149,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380075.449565"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "videoDownloadStarted()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1165,11 +1165,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380075.449565"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "setupObservers()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1229,11 +1229,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380499.579785"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1245,11 +1245,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380499.579785"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "continueVideo()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1261,11 +1261,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TeethReminder/VideoViewController.swift"
-            timestampString = "492380075.449565"
+            timestampString = "492382370.474347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "deinit"
             landmarkType = "5">
          </BreakpointContent>

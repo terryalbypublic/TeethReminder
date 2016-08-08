@@ -12,6 +12,7 @@ import AVKit
 
 class VideoViewController : UIViewController {
 
+    @IBOutlet weak var loadingView: UIProgressView!
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var videoView: UIView!
     var errorView : UIView!
@@ -97,6 +98,7 @@ class VideoViewController : UIViewController {
             
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.loadingLabel.text = "Loading "+String(Int(OndemandResources.resourceRequest.progress.fractionCompleted*100))+"%"
+                self.loadingView.setProgress(Float(OndemandResources.resourceRequest.progress.fractionCompleted), animated: true)
             })
         }
         else{
