@@ -13,7 +13,7 @@ let InitialMilliseconds = 150000
 let π:CGFloat = CGFloat(M_PI)
 
 
-@IBDesignable public class TimerView : UIView {
+@IBDesignable open class TimerView : UIView {
     
     var timerSeconds: Int {
         get {
@@ -21,21 +21,21 @@ let π:CGFloat = CGFloat(M_PI)
         }
     }
     
-    public var isLoaded = false
-    public var isRunning = false
-    public var isFinished = false
+    open var isLoaded = false
+    open var isRunning = false
+    open var isFinished = false
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
     var loadTimerPortions = 0
     var ellapsedTime = 0
-    var timer : NSTimer = NSTimer()
+    var timer : Timer = Timer()
     var displayLinkTimer : CADisplayLink = CADisplayLink()
-    @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
+    @IBInspectable var outlineColor: UIColor = UIColor.blue
+    @IBInspectable var counterColor: UIColor = UIColor.orange
     
     
     
-    override public func drawRect(rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         
         
         self.timerLabel.text = timeFormatted(self.timerSeconds)
@@ -82,31 +82,31 @@ let π:CGFloat = CGFloat(M_PI)
     }
     
     // public methods
-    public func stopTimer(){
+    open func stopTimer(){
         if(self.isLoaded && self.isRunning){
             self.startLabel.text = "Continue"
             self.isRunning = false
             self.timer.invalidate()
-            self.displayLinkTimer.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            self.displayLinkTimer.remove(from: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
         }
     }
     
     
     // start the animation loading
-    public func startLoadAnimation(){
+    open func startLoadAnimation(){
         self.displayLinkTimer = CADisplayLink(target: self, selector: #selector(updateLoading))
-        displayLinkTimer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        displayLinkTimer.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
     // animation when the timer is started
-    public func startTimerAnimation(){
+    open func startTimerAnimation(){
         if(self.isLoaded && !self.isRunning && !isFinished){
             self.startLabel.text = "Stop"
             self.isRunning = true
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
             
             self.displayLinkTimer = CADisplayLink(target: self, selector: #selector(updateTimer))
-            displayLinkTimer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            displayLinkTimer.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
         }
         else if(isFinished){
             resetTimer()
@@ -114,7 +114,7 @@ let π:CGFloat = CGFloat(M_PI)
     }
     
     // set timer to the initial time
-    public func resetTimer(){
+    open func resetTimer(){
         if(isLoaded){
             isRunning = false
             isFinished = false
@@ -122,7 +122,7 @@ let π:CGFloat = CGFloat(M_PI)
             self.ellapsedTime = 0
             self.timer.invalidate()
             if(isRunning){
-                self.displayLinkTimer.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+                self.displayLinkTimer.remove(from: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
             }
             self.setNeedsDisplay()
         }
@@ -134,7 +134,7 @@ let π:CGFloat = CGFloat(M_PI)
         self.ellapsedTime += 50;
     }
     
-    func timeFormatted(totalSeconds: Int) -> String {
+    func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)
@@ -143,7 +143,7 @@ let π:CGFloat = CGFloat(M_PI)
     // UI callbacks updater
     func updateTimer(){
         if(ellapsedTime == InitialMilliseconds){
-            self.displayLinkTimer.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            self.displayLinkTimer.remove(from: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
             self.isLoaded = true
             self.isRunning = false
             self.isFinished = true
@@ -154,7 +154,7 @@ let π:CGFloat = CGFloat(M_PI)
     
     func updateLoading(){
         if(loadTimerPortions == LoadMaxPortions){
-            self.displayLinkTimer.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            self.displayLinkTimer.remove(from: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
             self.isLoaded = true
             
         }

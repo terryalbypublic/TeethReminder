@@ -9,35 +9,35 @@
 import UIKit
 
 public enum BackgroundColor {
-    case Blue; case Grey; case White
+    case blue; case grey; case white
 }
 
 public enum ButtonBackgroundColor {
-    case Blue; case BlueHighlighted; case White
+    case blue; case blueHighlighted; case white
 }
 
 
 public enum FontColor{
-    case White; case Blue
+    case white; case blue
 }
 
-public class Styles : NSObject {
+open class Styles : NSObject {
     
     // UI configurations
-    private static let tableViewBackgroundColorConfig = BackgroundColor.Blue
-    private static let navigationTableViewBackgroundColorConfig = BackgroundColor.White
+    fileprivate static let tableViewBackgroundColorConfig = BackgroundColor.blue
+    fileprivate static let navigationTableViewBackgroundColorConfig = BackgroundColor.white
     
     
     
     // static methods
-    public static func tableViewBackgroundColor() -> UIColor{
-        if(tableViewBackgroundColorConfig == .Blue){
+    open static func tableViewBackgroundColor() -> UIColor{
+        if(tableViewBackgroundColorConfig == .blue){
             return blueColor()
         }
-        return UIColor.blackColor()
+        return UIColor.black
     }
     
-    public static func tableViewCellHeight() -> CGFloat{
+    open static func tableViewCellHeight() -> CGFloat{
         if(CurrentDevice.device.modelName == "iPhone 4s"){
             return 100
         }
@@ -53,52 +53,52 @@ public class Styles : NSObject {
         }
     }
     
-    public static func navigationBackgroundColor() -> UIColor{
-        if(navigationTableViewBackgroundColorConfig == .Grey){
+    open static func navigationBackgroundColor() -> UIColor{
+        if(navigationTableViewBackgroundColorConfig == .grey){
             return greyColor()
         }
-        else if(navigationTableViewBackgroundColorConfig == .White){
-            return UIColor.whiteColor()
+        else if(navigationTableViewBackgroundColorConfig == .white){
+            return UIColor.white
         }
-        return UIColor.blackColor()
+        return UIColor.black
     }
     
-    public static func fontColor(fontColor:FontColor) -> UIColor{
-        if(fontColor == .Blue){
+    open static func fontColor(_ fontColor:FontColor) -> UIColor{
+        if(fontColor == .blue){
             return blueColor()
         }
-        else if(fontColor == .White){
-            return UIColor.whiteColor()
+        else if(fontColor == .white){
+            return UIColor.white
         }
-        return UIColor.blackColor()
+        return UIColor.black
     }
     
     
-    public static func buttonBackgroundColor(color:ButtonBackgroundColor) -> UIColor{
-        if(color == .Blue){
+    open static func buttonBackgroundColor(_ color:ButtonBackgroundColor) -> UIColor{
+        if(color == .blue){
             return blueColor()
         }
             
-        else if(color == .BlueHighlighted){
+        else if(color == .blueHighlighted){
             return blueHighlightedColor()
         }
             
             
-        else if(color == .White){
-            return UIColor.whiteColor()
+        else if(color == .white){
+            return UIColor.white
         }
-        return UIColor.blackColor()
+        return UIColor.black
     }
     
-    private static func blueColor()->UIColor{
+    fileprivate static func blueColor()->UIColor{
         return UIColor(red:19/255, green:85/255, blue:181/255, alpha:1)
     }
     
-    private static func greyColor()->UIColor{
+    fileprivate static func greyColor()->UIColor{
         return UIColor(red: 218/255, green: 211/255, blue: 224/255, alpha: 1)
     }
     
-    private static func blueHighlightedColor()->UIColor{
+    fileprivate static func blueHighlightedColor()->UIColor{
         return UIColor(red:19/255, green:100/255, blue:181/255, alpha:1)
     }
     

@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class CurrentDevice{
-    public static let device = CurrentDevice()
-    public var modelName = UIDevice.currentDevice().modelName
+open class CurrentDevice{
+    open static let device = CurrentDevice()
+    open var modelName = UIDevice.current.modelName
     //public var modelName = "iPhone 6 Plus"  //use for testing only
 }
 
@@ -22,7 +22,7 @@ public extension UIDevice {
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)
         let identifier = machineMirror.children.reduce("") { identifier, element in
-            guard let value = element.value as? Int8 where value != 0 else { return identifier }
+            guard let value = element.value as? Int8 , value != 0 else { return identifier }
             return identifier + String(UnicodeScalar(UInt8(value)))
         }
         

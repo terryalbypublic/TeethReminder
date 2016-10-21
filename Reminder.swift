@@ -8,51 +8,43 @@
 
 import UIKit
 
-public class Reminder: NSObject {
+open class Reminder: NSObject {
     
-    public var datetime : NSDate = NSDate()
-    public var name : String = String()
-    public var isActive : Bool = false
-    let calendar = NSCalendar.currentCalendar()
+    open var datetime : Date = Date()
+    open var name : String = String()
+    open var isActive : Bool = false
+    let calendar = Calendar.current
     
     override public init(){
         super.init()
     }
     
     required public init(coder aDecoder: NSCoder) {
-        datetime = aDecoder.decodeObjectForKey("Datetime") as! NSDate
-        name = aDecoder.decodeObjectForKey("Name") as! String
-        isActive = aDecoder.decodeBoolForKey("IsActive")
+        datetime = aDecoder.decodeObject(forKey: "Datetime") as! Date
+        name = aDecoder.decodeObject(forKey: "Name") as! String
+        isActive = aDecoder.decodeBool(forKey: "IsActive")
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeBool(isActive, forKey: "IsActive")
-        aCoder.encodeObject(name, forKey: "Name")
-        aCoder.encodeObject(datetime, forKey: "Datetime")
+    func encodeWithCoder(_ aCoder: NSCoder) {
+        aCoder.encode(isActive, forKey: "IsActive")
+        aCoder.encode(name, forKey: "Name")
+        aCoder.encode(datetime, forKey: "Datetime")
     }
     
-    public func time() ->String{
-        let date = self.datetime
-        let components = calendar.components([.Hour, .Minute], fromDate: date)
-        
-        var zero = ""
-        
-        if(components.minute<10){
-            zero = "0"
-        }
-        
-        
-        return String(components.hour)+":"+zero+String(components.minute)
+    open func time() ->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: datetime)
     }
 }
 
 
-public class ReminderList: NSObject{
+open class ReminderList: NSObject{
     
-    public static let sharedInstance = ReminderList()
-    public var reminders : Array<Reminder> = []
+    open static let sharedInstance = ReminderList()
+    open var reminders : Array<Reminder> = []
     
-    public func setInitialValues(){
+    open func setInitialValues(){
         
         self.deserialize()
         
@@ -62,14 +54,14 @@ public class ReminderList: NSObject{
         
         let reminder1 = Reminder()
         
-        let calendar = NSCalendar.currentCalendar()
-        let datecomponents = NSDateComponents()
+        let calendar = Calendar.current
+        var datecomponents = DateComponents()
         
         
         datecomponents.minute = 0
         datecomponents.hour = 8
         
-        reminder1.datetime = calendar.dateFromComponents(datecomponents)!
+        reminder1.datetime = calendar.date(from: datecomponents)!
         reminder1.name = "Reminder for the Morning"
         reminder1.isActive = false
         
@@ -78,7 +70,7 @@ public class ReminderList: NSObject{
         datecomponents.minute = 0
         datecomponents.hour = 13
         
-        reminder2.datetime = calendar.dateFromComponents(datecomponents)!
+        reminder2.datetime = calendar.date(from: datecomponents)!
         reminder2.name = "Reminder for the Afternoon"
         reminder2.isActive = false
         
@@ -87,7 +79,7 @@ public class ReminderList: NSObject{
         datecomponents.minute = 0
         datecomponents.hour = 21
         
-        reminder3.datetime = calendar.dateFromComponents(datecomponents)!
+        reminder3.datetime = calendar.date(from: datecomponents)!
         reminder3.name = "Reminder for the Evening"
         reminder3.isActive = false
         
@@ -101,27 +93,27 @@ public class ReminderList: NSObject{
     
 
     
-    public func deserialize(){
+    open func deserialize(){
         
         // read from nsuserdefaults
-        let userdata = NSUserDefaults.standardUserDefaults()
-        let data = userdata.dataForKey("userdata")
+        let userdata = UserDefaults.standard
+        let data = userdata.data(forKey: "userdata")
         
         if(data != nil){
-            reminders = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Array<Reminder>
+            reminders = NSKeyedUnarchiver.unarchiveObject(with: data!) as! Array<Reminder>
         }
         else{
             reminders = Array<Reminder>();
         }
     }
     
-    public func serializeAndSave(){
-        let data = NSKeyedArchiver.archivedDataWithRootObject(reminders)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(data, forKey: "userdata")
+    open func serializeAndSave(){
+        let data = NSKeyedArchiver.archivedData(withRootObject: reminders)
+        let defaults = UserDefaults.standard
+        defaults.set(data, forKey: "userdata")
         
         // remove all old scheduled notifications
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UIApplication.shared.cancelAllLocalNotifications()
         
         // add the new one
         for reminder in reminders{
@@ -129,11 +121,11 @@ public class ReminderList: NSObject{
                 let localNotification = UILocalNotification()
                 localNotification.fireDate = reminder.datetime
                 localNotification.alertBody = "Let brush your teeth !!!"
-                localNotification.repeatInterval = .Day
-                localNotification.timeZone = NSTimeZone.defaultTimeZone()
-                localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+                localNotification.repeatInterval = .day
+                localNotification.timeZone = TimeZone.current
+                localNotification.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber + 1
                 
-                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                UIApplication.shared.scheduleLocalNotification(localNotification)
             }
         }
         

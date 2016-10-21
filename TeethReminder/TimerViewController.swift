@@ -20,18 +20,18 @@ class TimerViewController: UIViewController {
         self.timerView.addGestureRecognizer(gesture)
         self.view.backgroundColor = Styles.tableViewBackgroundColor()
         self.timerView.backgroundColor = Styles.tableViewBackgroundColor()
-        self.resetButton.hidden=true
+        self.resetButton.isHidden=true
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIApplication.sharedApplication().idleTimerDisabled = true
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        UIApplication.sharedApplication().idleTimerDisabled = false
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,17 +42,17 @@ class TimerViewController: UIViewController {
     func timerTapped() {
         if(timerView.isRunning){
             timerView.stopTimer()
-            self.resetButton.hidden=false
+            self.resetButton.isHidden=false
         }
         else if(timerView.isLoaded){
             timerView.startTimerAnimation()
-            self.resetButton.hidden=true
+            self.resetButton.isHidden=true
         }
     }
     
-    @IBAction func resetButtonTapped(sender: AnyObject) {
+    @IBAction func resetButtonTapped(_ sender: AnyObject) {
         timerView.resetTimer()
-        self.resetButton.hidden = true
+        self.resetButton.isHidden = true
         
     }
  

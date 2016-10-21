@@ -8,18 +8,18 @@
 
 import UIKit
 
-public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+open class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var timePicker: UIPickerView!
-    @IBOutlet public weak var saveButton: UIButton!
+    @IBOutlet open weak var saveButton: UIButton!
     
-    public var reminder : Reminder = Reminder()
+    open var reminder : Reminder = Reminder()
     var pickerDataHours : Array<String> = []
     var pickerDataMinutes : Array<String> = []
-    let calendar = NSCalendar.currentCalendar()
+    let calendar = Calendar.current
     
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         self.timePicker.delegate = self
@@ -28,7 +28,7 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Do any additional setup after loading the view.
     }
     
-    public func refresh(){
+    open func refresh(){
         fillMinutesData()
         fillHoursData()
         restoreValuesFromEntity()
@@ -37,31 +37,31 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
     func restoreValuesFromEntity(){
         
         let date = reminder.datetime
-        let components = calendar.components([.Hour, .Minute], fromDate: date)
+        let components = (calendar as NSCalendar).components([.hour, .minute], from: date as Date)
         
         let minutes = components.minute
         let hour = components.hour
         
-        self.timePicker.selectRow(hour, inComponent: 0, animated: false)
-        self.timePicker.selectRow(minutes, inComponent: 1, animated: false)
+        self.timePicker.selectRow(hour!, inComponent: 0, animated: false)
+        self.timePicker.selectRow(minutes!, inComponent: 1, animated: false)
     }
     
     
-    @IBAction func buttonOkTouchedDown(sender: OkButtonView) {
+    @IBAction func buttonOkTouchedDown(_ sender: OkButtonView) {
         sender.highlight = true
         sender.setNeedsDisplay()
     }
     
     
-    @IBAction func saveButtonTapped(sender: AnyObject) {
-        let minutes = self.timePicker.selectedRowInComponent(1)
-        let hours = self.timePicker.selectedRowInComponent(0)
+    @IBAction func saveButtonTapped(_ sender: AnyObject) {
+        let minutes = self.timePicker.selectedRow(inComponent: 1)
+        let hours = self.timePicker.selectedRow(inComponent: 0)
         
-        let datecomponents = NSDateComponents()
+        var datecomponents = DateComponents()
         datecomponents.minute = minutes
         datecomponents.hour = hours
         
-        reminder.datetime = calendar.dateFromComponents(datecomponents)!
+        reminder.datetime = calendar.date(from: datecomponents)!
         ReminderList.sharedInstance.serializeAndSave()
 //        
 //        let alert = UIAlertController(title: "Saved", message: "Successful saved!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -71,7 +71,7 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
         
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -98,18 +98,18 @@ public class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     // MARK: - Picker Delegate
     
-    public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    open func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
     
-    public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    open func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(component == 1){
             return pickerDataMinutes.count;
         }
         return pickerDataHours.count;
     }
     
-    public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String? {
+    open func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String? {
         if(component == 1){
             return pickerDataMinutes[row]
         }

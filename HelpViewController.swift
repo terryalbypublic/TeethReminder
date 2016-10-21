@@ -8,21 +8,21 @@
 
 import UIKit
 
-public class HelpViewController: UIViewController {
+open class HelpViewController: UIViewController {
 
-    @IBOutlet public weak var closeButtonTapped: UIButton!
+    @IBOutlet open weak var closeButtonTapped: UIButton!
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func touchDownOkButton(sender: OkButtonView) {
+    @IBAction func touchDownOkButton(_ sender: OkButtonView) {
         sender.highlight=true
         sender.setNeedsDisplay()
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

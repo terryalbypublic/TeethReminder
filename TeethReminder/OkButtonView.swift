@@ -9,20 +9,20 @@
 import UIKit
 
 
-@IBDesignable public class OkButtonView: UIButton {
+@IBDesignable open class OkButtonView: UIButton {
 
     
-    public var highlight : Bool = false
+    open var highlight : Bool = false
     
-    override public func drawRect(rect: CGRect) {
-        let path = UIBezierPath(ovalInRect: rect)
-        var backgroundColor : UIColor = UIColor.redColor();
+    override open func draw(_ rect: CGRect) {
+        let path = UIBezierPath(ovalIn: rect)
+        var backgroundColor : UIColor = UIColor.red;
         
         if(highlight){
-            backgroundColor = Styles.buttonBackgroundColor(.BlueHighlighted)
+            backgroundColor = Styles.buttonBackgroundColor(.blueHighlighted)
         }
         else{
-            backgroundColor = Styles.buttonBackgroundColor(.Blue)
+            backgroundColor = Styles.buttonBackgroundColor(.blue)
         }
         
         backgroundColor.setFill()
@@ -37,21 +37,21 @@ import UIKit
         
         //move the initial point of the path
         //to the start of the horizontal stroke
-        checkPath.moveToPoint(CGPoint(
+        checkPath.move(to: CGPoint(
             x:bounds.width/4 + 3,
             y:bounds.height/2 + 5))
         
         //add a point to the path at the end of the stroke
-        checkPath.addLineToPoint(CGPoint(
+        checkPath.addLine(to: CGPoint(
             x:bounds.width/4 + 13,
             y:bounds.height/2 + 15))
         
-        checkPath.addLineToPoint(CGPoint(
+        checkPath.addLine(to: CGPoint(
             x:bounds.width*0.75,
             y:bounds.height*0.3-5))
         
         //set the stroke color
-        UIColor.whiteColor().setStroke()
+        UIColor.white.setStroke()
         
         //draw the stroke
         checkPath.stroke()

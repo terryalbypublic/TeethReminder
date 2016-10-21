@@ -333,13 +333,16 @@
 					6507A1181C15906E00E6228F = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = W4LB2R7L9L;
+						LastSwiftMigration = 0800;
 					};
 					6507A12C1C15906F00E6228F = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6507A1181C15906E00E6228F;
 					};
 					6507A1371C15906F00E6228F = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6507A1181C15906E00E6228F;
 					};
 				};
@@ -581,6 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.TeethReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -596,6 +600,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.TeethReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -607,6 +612,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scout24.TeethReminderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeethReminder.app/TeethReminder";
 			};
 			name = Debug;
@@ -619,6 +625,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scout24.TeethReminderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeethReminder.app/TeethReminder";
 			};
 			name = Release;
@@ -630,6 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scout24.TeethReminderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TeethReminder;
 				USES_XCTRUNNER = YES;
 			};
@@ -642,6 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Scout24.TeethReminderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TeethReminder;
 				USES_XCTRUNNER = YES;
 			};

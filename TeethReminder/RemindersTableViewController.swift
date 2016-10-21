@@ -8,12 +8,12 @@
 
 import UIKit
 
-public class GlobalConstants{
+open class GlobalConstants{
     
     static let userNotificationKey = "terence.keyForAllowedPush"
 }
 
-public class RemindersTableViewController: UITableViewController {
+open class RemindersTableViewController: UITableViewController {
 
     var helpViewController = HelpViewController()
     var timeViewController = SetTimeViewController()
@@ -22,15 +22,15 @@ public class RemindersTableViewController: UITableViewController {
     var isHelpViewOpen = false
     var isTimeViewOpen = false
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = Styles.tableViewBackgroundColor()
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         self.navigationController?.navigationBar.barTintColor = Styles.tableViewBackgroundColor()
         self.navigationController?.navigationBar.barTintColor = Styles.navigationBackgroundColor()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Styles.fontColor(.Blue)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Styles.fontColor(.blue)]
         
         fillReminders()
         
@@ -39,17 +39,17 @@ public class RemindersTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func helpButtonTapped(sender: AnyObject) {
+    @IBAction func helpButtonTapped(_ sender: AnyObject) {
         if(!isHelpViewOpen && !isTimeViewOpen){
             isHelpViewOpen = true
             self.helpViewController = getHelpViewController() as! HelpViewController
             self.navigationController!.view.addSubview(helpViewController.view)
-            helpViewController.closeButtonTapped.addTarget(self, action: #selector(RemindersTableViewController.closeHelpView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            helpViewController.closeButtonTapped.addTarget(self, action: #selector(RemindersTableViewController.closeHelpView(_:)), for: UIControlEvents.touchUpInside)
             self.animateOpenView(self.helpViewController.view)
         }
     }
     
-    private func openTimeView(row: Int){
+    fileprivate func openTimeView(_ row: Int){
         if(!isHelpViewOpen && !isTimeViewOpen){
             isTimeViewOpen = true
             self.timeViewController = getTimeViewController() as! SetTimeViewController
@@ -57,45 +57,45 @@ public class RemindersTableViewController: UITableViewController {
             self.timeViewController.reminder = reminder
             self.timeViewController.refresh()
             self.navigationController!.view.addSubview(timeViewController.view)
-            timeViewController.saveButton.addTarget(self, action: #selector(RemindersTableViewController.closeTimeView(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            timeViewController.saveButton.addTarget(self, action: #selector(RemindersTableViewController.closeTimeView(_:)), for: UIControlEvents.touchUpInside)
             self.animateOpenView(self.timeViewController.view)
         }
     }
     
     
-    func animateOpenView(view: UIView){
-        UIView.animateWithDuration(0.5, animations: {
+    func animateOpenView(_ view: UIView){
+        UIView.animate(withDuration: 0.5, animations: {
             self.view.alpha = 0.5;
-            self.view.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.view.transform = CGAffineTransform(translationX: 0, y: 0)
         })
         
-        let scale = CGAffineTransformMakeScale(0.3, 0.3)
-        let translate = CGAffineTransformMakeTranslation(50, -50)
-        view.transform = CGAffineTransformConcat(scale, translate)
+        let scale = CGAffineTransform(scaleX: 0.3, y: 0.3)
+        let translate = CGAffineTransform(translationX: 50, y: -50)
+        view.transform = scale.concatenating(translate)
         view.alpha = 0
         
-        UIView.animateWithDuration(0.5, animations: {
-            let scale = CGAffineTransformMakeScale(1,1)
-            let translate = CGAffineTransformMakeTranslation(0, 0)
-            view.transform = CGAffineTransformConcat(scale, translate)
+        UIView.animate(withDuration: 0.5, animations: {
+            let scale = CGAffineTransform(scaleX: 1,y: 1)
+            let translate = CGAffineTransform(translationX: 0, y: 0)
+            view.transform = scale.concatenating(translate)
             view.alpha = 1
         })
     }
     
-    func animateCloseView(view: UIView){
-        UIView.animateWithDuration(0.5, animations: {
+    func animateCloseView(_ view: UIView){
+        UIView.animate(withDuration: 0.5, animations: {
             self.view.alpha = 1;
-            self.view.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.view.transform = CGAffineTransform(translationX: 0, y: 0)
         })
     }
     
-    func closeHelpView(sender: AnyObject){
+    func closeHelpView(_ sender: AnyObject){
         isHelpViewOpen = false
         self.animateCloseView(self.helpViewController.view)
         self.helpViewController.view.removeFromSuperview()
     }
     
-    public func closeTimeView(sender: AnyObject){
+    open func closeTimeView(_ sender: AnyObject){
         isTimeViewOpen = false
         self.timeViewController.saveButtonTapped(sender)
         self.animateCloseView(self.timeViewController.view)
@@ -105,19 +105,19 @@ public class RemindersTableViewController: UITableViewController {
     
     func getHelpViewController() -> UIViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let helpViewCtr = storyboard.instantiateViewControllerWithIdentifier("HelpViewController") as UIViewController
+        let helpViewCtr = storyboard.instantiateViewController(withIdentifier: "HelpViewController") as UIViewController
         
         if(CurrentDevice.device.modelName == "iPhone 4s"){
-            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.52)
+            helpViewCtr.view.frame = CGRect(x: self.view.frame.width * 0.05 , y: 100, width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.52)
         }
         else if(CurrentDevice.device.modelName == "iPhone 5"){
-            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.45)
+            helpViewCtr.view.frame = CGRect(x: self.view.frame.width * 0.05 , y: 100, width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.45)
         }
         else if(CurrentDevice.device.modelName == "iPhone 5s"){
-            helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.45)
+            helpViewCtr.view.frame = CGRect(x: self.view.frame.width * 0.05 , y: 100, width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.45)
         }
         else{
-           helpViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.35)
+           helpViewCtr.view.frame = CGRect(x: self.view.frame.width * 0.05 , y: 100, width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.35)
         }
         
         helpViewCtr.view.layer.cornerRadius = 5
@@ -127,10 +127,10 @@ public class RemindersTableViewController: UITableViewController {
     // handler used for the first app start, when the user accepts (or refuse) to allow notifications
     func registerEventHandlerForPush(){
         // if the user tap on allow notifications, the method allowPushTapped is called
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(RemindersTableViewController.allowPushTapped),
-            name: GlobalConstants.userNotificationKey,
+            name: NSNotification.Name(rawValue: GlobalConstants.userNotificationKey),
             object: nil)
         
     }
@@ -140,7 +140,7 @@ public class RemindersTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override public func viewWillAppear(animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         self.tableView.reloadData()
     }
@@ -150,50 +150,50 @@ public class RemindersTableViewController: UITableViewController {
         reminders = reminderList.reminders
     }
     
-    func setReminderActive(isActive: Bool, index: Int){
+    func setReminderActive(_ isActive: Bool, index: Int){
         reminders[index].isActive = isActive
         reminderList.serializeAndSave()
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
     
-    override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Styles.tableViewCellHeight();
     }
 
-    override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override open func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return notificationsAllowed() ? reminders.count : (reminders.count + 1)
     }
     
     func notificationsAllowed() -> Bool{
-        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()!
-        return settings.types.contains([.Alert, .Sound])
+        let settings = UIApplication.shared.currentUserNotificationSettings!
+        return settings.types.contains([.alert, .sound])
     }
 
     
-    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // the last row is reserved for the warning (if the notifications are not allowed)
-        if(indexPath.row == self.reminders.count){
+        if((indexPath as NSIndexPath).row == self.reminders.count){
             
-            let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("WarningCell", forIndexPath: indexPath)
+            let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "WarningCell", for: indexPath)
             return cell;
         }
         
         else{
             
-            let cell : ReminderViewCell = tableView.dequeueReusableCellWithIdentifier("ReminderCell", forIndexPath: indexPath) as! ReminderViewCell
+            let cell : ReminderViewCell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! ReminderViewCell
 
             cell.index = indexPath.row
             cell.name.text = reminders[indexPath.row].name
@@ -208,39 +208,39 @@ public class RemindersTableViewController: UITableViewController {
     
     
     
-    override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // if the user selected the cell with the warning
-        if(indexPath.row == 3){
+        if((indexPath as NSIndexPath).row == 3){
             return;
         }
         
-        openTimeView(indexPath.row)
+        openTimeView((indexPath as NSIndexPath).row)
         
     }
     
     func getTimeViewController() -> UIViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let timeViewCtr = storyboard.instantiateViewControllerWithIdentifier("SetTimeViewController") as UIViewController
+        let timeViewCtr = storyboard.instantiateViewController(withIdentifier: "SetTimeViewController") as UIViewController
         
         if(CurrentDevice.device.modelName == "iPhone 4s"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.6)
+            timeViewCtr.view.frame = CGRect(x: 0 , y: 100, width: self.view.frame.width, height: self.view.frame.height * 0.6)
         }
         else if(CurrentDevice.device.modelName == "iPhone 5"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.5)
+            timeViewCtr.view.frame = CGRect(x: 0 , y: 100, width: self.view.frame.width, height: self.view.frame.height * 0.5)
         }
         
         else if(CurrentDevice.device.modelName  == "iPhone 5s"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.5)
+            timeViewCtr.view.frame = CGRect(x: 0 , y: 100, width: self.view.frame.width, height: self.view.frame.height * 0.5)
         }
         else if(CurrentDevice.device.modelName  == "iPhone 6"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.46)
+            timeViewCtr.view.frame = CGRect(x: 0 , y: 100, width: self.view.frame.width, height: self.view.frame.height * 0.46)
         }
         else if(CurrentDevice.device.modelName  == "iPhone 6s"){
-            timeViewCtr.view.frame = CGRectMake(0 , 100, self.view.frame.width, self.view.frame.height * 0.46)
+            timeViewCtr.view.frame = CGRect(x: 0 , y: 100, width: self.view.frame.width, height: self.view.frame.height * 0.46)
         }
         else{
-            timeViewCtr.view.frame = CGRectMake(self.view.frame.width * 0.05 , 100, self.view.frame.width * 0.9, self.view.frame.height * 0.4)
+            timeViewCtr.view.frame = CGRect(x: self.view.frame.width * 0.05 , y: 100, width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.4)
         }
         
         timeViewCtr.view.layer.cornerRadius = 5

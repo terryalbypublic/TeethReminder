@@ -18,7 +18,7 @@ class VideoViewController : UIViewController {
     var errorView : UIView!
     let indicator = UIActivityIndicatorView()
     let playerViewController = AVPlayerViewController()
-    private var foregroundNotification: NSObjectProtocol!
+    fileprivate var foregroundNotification: NSObjectProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +31,12 @@ class VideoViewController : UIViewController {
         }
     }
     
-    private func setupObservers(){
-        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadFinished), name: "videoDownloadFinished", object: nil)
-        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadStarted), name: "videoDownloadStarted", object: nil)
-        OndemandResources.resourceRequest.progress.addObserver(self, forKeyPath: "fractionCompleted", options: [.New, .Initial], context: nil)
+    fileprivate func setupObservers(){
+        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadFinished), name: NSNotification.Name(rawValue: "videoDownloadFinished"), object: nil)
+        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadStarted), name: NSNotification.Name(rawValue: "videoDownloadStarted"), object: nil)
+        OndemandResources.resourceRequest.progress.addObserver(self, forKeyPath: "fractionCompleted", options: [.new, .initial], context: nil)
         
-        foregroundNotification = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillEnterForegroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) {
+        foregroundNotification = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.main) {
             [unowned self] notification in
             
             self.continueVideo()
@@ -46,8 +46,8 @@ class VideoViewController : UIViewController {
     
     deinit {
         // make sure to remove the observer when this view controller is dismissed/deallocated
-        NSNotificationCenter.defaultCenter().removeObserver(foregroundNotification)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(foregroundNotification)
+        NotificationCenter.default.removeObserver(self)
         
     }
     
@@ -81,65 +81,65 @@ class VideoViewController : UIViewController {
     
 
     
-    private func setupUI(){
-        self.videoView.frame = CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.width*0.75)
-        indicator.activityIndicatorViewStyle = .Gray
+    fileprivate func setupUI(){
+        self.videoView.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.width*0.75)
+        indicator.activityIndicatorViewStyle = .gray
         indicator.center = view.center
         view.addSubview(indicator)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("warningViewController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "warningViewController")
         self.errorView = vc.view
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if(keyPath! == "fractionCompleted"){
             NSLog(String(OndemandResources.resourceRequest.progress.fractionCompleted))
             
-            NSOperationQueue.mainQueue().addOperationWithBlock({
+            OperationQueue.main.addOperation({
                 self.loadingLabel.text = "Loading "+String(Int(OndemandResources.resourceRequest.progress.fractionCompleted*100))+"%"
                 self.loadingView.setProgress(Float(OndemandResources.resourceRequest.progress.fractionCompleted), animated: true)
             })
         }
         else{
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
     
-    private func startVideo(){
+    fileprivate func startVideo(){
         OndemandResources.notifications.removeObserver(self)
-        let filePath = NSBundle.mainBundle().pathForResource("teeth", ofType: "mp4")
-        let asset = AVURLAsset.init(URL: NSURL(fileURLWithPath:filePath!), options: nil)
+        let filePath = Bundle.main.path(forResource: "teeth", ofType: "mp4")
+        let asset = AVURLAsset.init(url: URL(fileURLWithPath:filePath!), options: nil)
         let player = AVPlayer(playerItem: AVPlayerItem(asset: asset))
         playerViewController.showsPlaybackControls = true
         playerViewController.player = player
-        playerViewController.view.backgroundColor = UIColor.whiteColor()
+        playerViewController.view.backgroundColor = UIColor.white
         playerViewController.view.frame.size.width = self.videoView.frame.size.width
         playerViewController.view.frame.size.height = self.videoView.frame.size.height
         playerViewController.view.frame.origin.y += 1.5
         self.videoView.addSubview(playerViewController.view)
         
         // Invoke after player is created and AVPlayerItem is specified
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(playerItemDidReachEnd),
-                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                          object: player.currentItem)
         
         playerViewController.player!.play()
     }
     
-    private func pauseVideo(){
+    fileprivate func pauseVideo(){
         self.playerViewController.player?.pause()
     }
     
-    private func continueVideo(){
-        if(self.playerViewController.player != nil && self.playerViewController.player?.status == AVPlayerStatus.ReadyToPlay){
+    fileprivate func continueVideo(){
+        if(self.playerViewController.player != nil && self.playerViewController.player?.status == AVPlayerStatus.readyToPlay){
             self.playerViewController.player?.play()
         }
     }
     
-    func playerItemDidReachEnd(notification: NSNotification) {
-        self.playerViewController.player!.seekToTime(kCMTimeZero)
+    func playerItemDidReachEnd(_ notification: Notification) {
+        self.playerViewController.player!.seek(to: kCMTimeZero)
         self.playerViewController.player!.play()
     }
     
