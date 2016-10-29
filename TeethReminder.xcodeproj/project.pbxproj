@@ -16,6 +16,9 @@
 		6509E7991D48BC3400CD9459 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6509E7981D48BC3400CD9459 /* VideoViewController.swift */; };
 		6509E79B1D48BDE000CD9459 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6509E79A1D48BDE000CD9459 /* AVKit.framework */; };
 		6509E79F1D48D65600CD9459 /* teeth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6509E79C1D48D4EB00CD9459 /* teeth.mp4 */; settings = {ASSET_TAGS = (teethvideo, ); }; };
+		651272C51DC39D4400A598A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651272C41DC39D4300A598A3 /* Constants.swift */; };
+		651272C61DC3A59C00A598A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651272C41DC39D4300A598A3 /* Constants.swift */; };
+		651272C71DC3A5A400A598A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651272C41DC39D4300A598A3 /* Constants.swift */; };
 		651283221D48B852007240EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651283211D48B852007240EA /* AVFoundation.framework */; };
 		651DC7781C2764AC0022B9AB /* Travel-Warning-min.png in Resources */ = {isa = PBXBuildFile; fileRef = 651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */; };
 		652824BA1C1631D50017A7FF /* RemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652824B91C1631D50017A7FF /* RemindersTableViewController.swift */; };
@@ -87,6 +90,7 @@
 		6509E7981D48BC3400CD9459 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		6509E79A1D48BDE000CD9459 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		6509E79C1D48D4EB00CD9459 /* teeth.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = teeth.mp4; sourceTree = "<group>"; };
+		651272C41DC39D4300A598A3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		651283211D48B852007240EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Travel-Warning-min.png"; sourceTree = "<group>"; };
 		652824B91C1631D50017A7FF /* RemindersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersTableViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */,
+				651272C41DC39D4300A598A3 /* Constants.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				652824C61C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				658665731CD386A600172395 /* WarningViewCell.swift in Sources */,
 				653507A01CE3323900FD6EBF /* TimerViewController.swift in Sources */,
+				651272C51DC39D4400A598A3 /* Constants.swift in Sources */,
 				655BCA1F1D49438F00FB657A /* OndemandResources.swift in Sources */,
 				6509E7991D48BC3400CD9459 /* VideoViewController.swift in Sources */,
 				653A2DFA1C8F240300D5DB45 /* HelpViewController.swift in Sources */,
@@ -422,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651272C61DC3A59C00A598A3 /* Constants.swift in Sources */,
 				653FC9D71CDC11B500446397 /* OkButtonView.swift in Sources */,
 				652824C71C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				653A2DFB1C8F240300D5DB45 /* HelpViewController.swift in Sources */,
@@ -441,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651272C71DC3A5A400A598A3 /* Constants.swift in Sources */,
 				653FC9D81CDC11B600446397 /* OkButtonView.swift in Sources */,
 				652824C81C1881270017A7FF /* SetTimeViewController.swift in Sources */,
 				653A2DFC1C8F240300D5DB45 /* HelpViewController.swift in Sources */,
@@ -578,6 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W4LB2R7L9L;
 				INFOPLIST_FILE = TeethReminder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -594,6 +603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W4LB2R7L9L;
 				INFOPLIST_FILE = TeethReminder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

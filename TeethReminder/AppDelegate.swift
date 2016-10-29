@@ -25,13 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.registerUserNotificationSettings(settings)
         
         // open the second tab bar menu if the user opened from the notification
+        let tabBar = window?.rootViewController as! UITabBarController
         if (launchOptions != nil) {
-            let tabBar = window?.rootViewController as! UITabBarController
-            tabBar.selectedIndex=1
+            tabBar.selectedIndex=Constants.tabTimer
         }
+        
         
         // start fetching of video
         OndemandResources.getResources()
+        
         
         return true
     }

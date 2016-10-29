@@ -1,0 +1,4 @@
+{"identity":{"generator":"Crashlytics iOS SDK/3.5.0","build_version":"97","display_version":"3.5.0","api_key":"fa011de3c9c5b83ba16bc2ac6b2e1feac909c510","started_at":1477066255,"session_id":"95e7ef1552604f3193e8e1ba80b85239","install_id":"CC369928-052D-4C35-B580-3795E53ADFD4","beta_token":null}}
+{"host":{"model":"iPhone8,2","machine":"N66AP","os_build_version":"14A456","os_display_version":"10.0.2","platform":"ios","locale":"en_CH"}}
+{"application":{"bundle_id":"ch.immoscout24.ImmoScout24.alpha","custom_bundle_id":null,"build_version":"5030","display_version":"4.2.3","extension_id":null}}
+{"executable":{"architecture":"arm64","uuid":"f40bc7f03c94346ca482d08a5cde104f","base":4294967296,"size":11812864,"encrypted":false,"minimum_sdk_version":"8.0.0","built_sdk_version":"10.0.0"}}

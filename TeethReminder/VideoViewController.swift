@@ -29,11 +29,14 @@ class VideoViewController : UIViewController {
         if(OndemandResources.videoDownloaded){
             self.startVideo()
         }
+        
+        setErrorOnUI()
+        
     }
     
     fileprivate func setupObservers(){
-        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadFinished), name: NSNotification.Name(rawValue: "videoDownloadFinished"), object: nil)
-        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadStarted), name: NSNotification.Name(rawValue: "videoDownloadStarted"), object: nil)
+        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadFinished), name: NSNotification.Name(rawValue: Constants.videoDownloadFinished), object: nil)
+        OndemandResources.notifications.addObserver(self, selector: #selector(videoDownloadStarted), name: NSNotification.Name(rawValue: Constants.videoDownloadStarted), object: nil)
         OndemandResources.resourceRequest.progress.addObserver(self, forKeyPath: "fractionCompleted", options: [.new, .initial], context: nil)
         
         foregroundNotification = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.main) {
@@ -63,12 +66,7 @@ class VideoViewController : UIViewController {
             self.startVideo()
         }
         else if(OndemandResources.errorCode > 0){
-            switch OndemandResources.errorCode{
-            case NSBundleOnDemandResourceOutOfSpaceError:
-                self.view.addSubview(errorView)
-            default:
-                assert(false, OndemandResources.errorCode.description)
-            }
+            setErrorOnUI()
         }
 
     }
@@ -141,6 +139,17 @@ class VideoViewController : UIViewController {
     func playerItemDidReachEnd(_ notification: Notification) {
         self.playerViewController.player!.seek(to: kCMTimeZero)
         self.playerViewController.player!.play()
+    }
+    
+    func setErrorOnUI(){
+        if(OndemandResources.errorCode > 0){
+            switch OndemandResources.errorCode{
+            case NSBundleOnDemandResourceOutOfSpaceError:
+                self.view.addSubview(errorView)
+            default:
+                assert(false, OndemandResources.errorCode.description)  // todo
+            }
+        }
     }
     
 

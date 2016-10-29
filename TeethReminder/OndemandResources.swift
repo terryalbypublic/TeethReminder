@@ -24,12 +24,12 @@ public class OndemandResources: NSObject {
                 if resourcesAvailable {
                     // Do something with the resources
                     self.videoDownloaded = true
-                    OndemandResources.notifications.post(name: NSNotification.Name(rawValue: "videoDownloadFinished"), object: nil)
+                    OndemandResources.notifications.post(name: NSNotification.Name(rawValue: Constants.videoDownloadFinished), object: nil)
                     
                 } else {
                     
                     self.videoDownloaded = false
-                    OndemandResources.notifications.post(name: NSNotification.Name(rawValue: "videoDownloadStarted"), object: nil)
+                    OndemandResources.notifications.post(name: NSNotification.Name(rawValue: Constants.videoDownloadStarted), object: nil)
                     
                     
                     
@@ -45,7 +45,7 @@ public class OndemandResources: NSObject {
                                 self.errorDescription = (err as! NSError).description
                                 self.videoDownloaded = false
                             }
-                            OndemandResources.notifications.post(name: NSNotification.Name(rawValue: "videoDownloadFinished"), object: nil)
+                            OndemandResources.notifications.post(name: NSNotification.Name(rawValue: Constants.videoDownloadFinished), object: nil)
                             
                         })
                     }
