@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // open the second tab bar menu if the user opened from the notification
         let tabBar = window?.rootViewController as! UITabBarController
-        if (launchOptions != nil) {
+        if (launchOptions != nil && launchOptions?[UIApplicationLaunchOptionsKey.localNotification] != nil) {
             tabBar.selectedIndex=Constants.tabTimer
         }
         
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         // open the second tab bar menu if the user opened from the notification
         let tabBar = window?.rootViewController as! UITabBarController
-        tabBar.selectedIndex=1
+        tabBar.selectedIndex=Constants.tabTimer
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
