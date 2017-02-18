@@ -1,0 +1,6 @@
+framework module Pods_TeethReminderUITests {
+  umbrella header "Pods-TeethReminderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

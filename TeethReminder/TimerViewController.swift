@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TimerViewController: UIViewController {
 
@@ -23,6 +24,15 @@ class TimerViewController: UIViewController {
         self.resetButton.isHidden=true
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // tracking
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            kFIRParameterItemName: "openTimerView" as NSObject
+            ])
     }
     
     override func viewDidAppear(_ animated: Bool) {

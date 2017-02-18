@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 open class GlobalConstants{
     
@@ -38,6 +39,7 @@ open class RemindersTableViewController: UITableViewController {
             registerEventHandlerForPush()
         }
     }
+    
     
     @IBAction func helpButtonTapped(_ sender: AnyObject) {
         if(!isHelpViewOpen && !isTimeViewOpen){
@@ -142,6 +144,12 @@ open class RemindersTableViewController: UITableViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
+        
+        // tracking
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            kFIRParameterItemName: "openRemindersView" as NSObject
+            ])
+        
         self.tableView.reloadData()
     }
     

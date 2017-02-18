@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Firebase
 
 class VideoViewController : UIViewController {
 
@@ -32,6 +33,15 @@ class VideoViewController : UIViewController {
         
         setErrorOnUI()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // tracking
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            kFIRParameterItemName: "openVideoView" as NSObject
+            ])
     }
     
     fileprivate func setupObservers(){

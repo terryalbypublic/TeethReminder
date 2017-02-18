@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3A56B3196B2AEC17EF1F9E /* Pods_TeethReminderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8BB735DE34CF4FBED3711F /* Pods_TeethReminderTests.framework */; };
 		6507A11D1C15906E00E6228F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507A11C1C15906E00E6228F /* AppDelegate.swift */; };
 		6507A1221C15906E00E6228F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6507A1201C15906E00E6228F /* Main.storyboard */; };
 		6507A1241C15906E00E6228F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6507A1231C15906E00E6228F /* Assets.xcassets */; };
@@ -49,12 +50,17 @@
 		653FC9D71CDC11B500446397 /* OkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FC9D51CDC074900446397 /* OkButtonView.swift */; };
 		653FC9D81CDC11B600446397 /* OkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FC9D51CDC074900446397 /* OkButtonView.swift */; };
 		655BCA1F1D49438F00FB657A /* OndemandResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BCA1E1D49438F00FB657A /* OndemandResources.swift */; };
+		6571E6341E58A5B100388298 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6571E6331E58A5B100388298 /* GoogleService-Info.plist */; };
+		6571E6351E58A5B100388298 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6571E6331E58A5B100388298 /* GoogleService-Info.plist */; };
+		6571E6361E58A5B100388298 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6571E6331E58A5B100388298 /* GoogleService-Info.plist */; };
 		658665731CD386A600172395 /* WarningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665721CD386A600172395 /* WarningViewCell.swift */; };
 		658665761CD386F500172395 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
 		659B9FF51CD38F1500E482C1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
 		659B9FF61CD38F1500E482C1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665751CD386F500172395 /* Styles.swift */; };
 		659B9FF71CD38F1B00E482C1 /* WarningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665721CD386A600172395 /* WarningViewCell.swift */; };
 		659B9FF81CD38F1B00E482C1 /* WarningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658665721CD386A600172395 /* WarningViewCell.swift */; };
+		A120F1B35FBA9C15F4C69DE7 /* Pods_TeethReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A2DAA67AD53A5425C715B6 /* Pods_TeethReminder.framework */; };
+		B2B9AD606005274E0F3DF990 /* Pods_TeethReminderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8914F23C5C5BA2DABCE2EE /* Pods_TeethReminderUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11D9217F7B15D020D5191E37 /* Pods-TeethReminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeethReminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeethReminder/Pods-TeethReminder.release.xcconfig"; sourceTree = "<group>"; };
+		1B8914F23C5C5BA2DABCE2EE /* Pods_TeethReminderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeethReminderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CC1475A307A97CFFF2CC8CE /* Pods-TeethReminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeethReminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeethReminder/Pods-TeethReminder.debug.xcconfig"; sourceTree = "<group>"; };
 		6507A1191C15906E00E6228F /* TeethReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeethReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6507A11C1C15906E00E6228F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6507A1211C15906E00E6228F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,8 +112,15 @@
 		653A2DFD1C8F48D700D5DB45 /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDevice.swift; path = ../UIDevice.swift; sourceTree = "<group>"; };
 		653FC9D51CDC074900446397 /* OkButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkButtonView.swift; sourceTree = "<group>"; };
 		655BCA1E1D49438F00FB657A /* OndemandResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OndemandResources.swift; sourceTree = "<group>"; };
+		6571E6331E58A5B100388298 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		658665721CD386A600172395 /* WarningViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningViewCell.swift; sourceTree = "<group>"; };
 		658665751CD386F500172395 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		67B1F0724135CC95D3AAF214 /* Pods-TeethReminderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeethReminderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeethReminderTests/Pods-TeethReminderTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E8BB735DE34CF4FBED3711F /* Pods_TeethReminderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeethReminderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B9906EC643E08CED3C7BBBC /* Pods-TeethReminderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeethReminderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeethReminderUITests/Pods-TeethReminderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		83485D4F3905A112ED0D0833 /* Pods-TeethReminderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeethReminderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeethReminderTests/Pods-TeethReminderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB880FF3FF596D09B08A5CB4 /* Pods-TeethReminderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeethReminderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeethReminderUITests/Pods-TeethReminderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1A2DAA67AD53A5425C715B6 /* Pods_TeethReminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeethReminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +130,7 @@
 			files = (
 				6509E79B1D48BDE000CD9459 /* AVKit.framework in Frameworks */,
 				651283221D48B852007240EA /* AVFoundation.framework in Frameworks */,
+				A120F1B35FBA9C15F4C69DE7 /* Pods_TeethReminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3A56B3196B2AEC17EF1F9E /* Pods_TeethReminderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B9AD606005274E0F3DF990 /* Pods_TeethReminderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +162,7 @@
 				6507A1301C15906F00E6228F /* TeethReminderTests */,
 				6507A13B1C15906F00E6228F /* TeethReminderUITests */,
 				6507A11A1C15906E00E6228F /* Products */,
+				F91A7755EC360D27F3A4F96B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +186,7 @@
 				653FC9D41CDC073500446397 /* Views */,
 				658665741CD386C300172395 /* Styles */,
 				6507A11C1C15906E00E6228F /* AppDelegate.swift */,
+				6571E6331E58A5B100388298 /* GoogleService-Info.plist */,
 				6507A1201C15906E00E6228F /* Main.storyboard */,
 				6507A1231C15906E00E6228F /* Assets.xcassets */,
 				651DC7771C2764AC0022B9AB /* Travel-Warning-min.png */,
@@ -198,6 +219,9 @@
 			children = (
 				651283211D48B852007240EA /* AVFoundation.framework */,
 				6509E79A1D48BDE000CD9459 /* AVKit.framework */,
+				F1A2DAA67AD53A5425C715B6 /* Pods_TeethReminder.framework */,
+				6E8BB735DE34CF4FBED3711F /* Pods_TeethReminderTests.framework */,
+				1B8914F23C5C5BA2DABCE2EE /* Pods_TeethReminderUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,6 +290,19 @@
 			name = Styles;
 			sourceTree = "<group>";
 		};
+		F91A7755EC360D27F3A4F96B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CC1475A307A97CFFF2CC8CE /* Pods-TeethReminder.debug.xcconfig */,
+				11D9217F7B15D020D5191E37 /* Pods-TeethReminder.release.xcconfig */,
+				83485D4F3905A112ED0D0833 /* Pods-TeethReminderTests.debug.xcconfig */,
+				67B1F0724135CC95D3AAF214 /* Pods-TeethReminderTests.release.xcconfig */,
+				DB880FF3FF596D09B08A5CB4 /* Pods-TeethReminderUITests.debug.xcconfig */,
+				7B9906EC643E08CED3C7BBBC /* Pods-TeethReminderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,9 +310,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6507A1411C15906F00E6228F /* Build configuration list for PBXNativeTarget "TeethReminder" */;
 			buildPhases = (
+				98F41D8C0801E10ED90D1DCB /* [CP] Check Pods Manifest.lock */,
 				6507A1151C15906E00E6228F /* Sources */,
 				6507A1161C15906E00E6228F /* Frameworks */,
 				6507A1171C15906E00E6228F /* Resources */,
+				796CAC0506E69289DEE613BE /* [CP] Embed Pods Frameworks */,
+				8EEA1615B3A31342C0D25BD5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,9 +330,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6507A1441C15906F00E6228F /* Build configuration list for PBXNativeTarget "TeethReminderTests" */;
 			buildPhases = (
+				7281CE18F86AC013E242F436 /* [CP] Check Pods Manifest.lock */,
 				6507A1291C15906F00E6228F /* Sources */,
 				6507A12A1C15906F00E6228F /* Frameworks */,
 				6507A12B1C15906F00E6228F /* Resources */,
+				ABCCE4A0CC58786B7A233CFF /* [CP] Embed Pods Frameworks */,
+				FB5A51C3302F07182D4D8E40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,9 +351,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6507A1471C15906F00E6228F /* Build configuration list for PBXNativeTarget "TeethReminderUITests" */;
 			buildPhases = (
+				B6BBCA503EDDAB2DF70B7268 /* [CP] Check Pods Manifest.lock */,
 				6507A1341C15906F00E6228F /* Sources */,
 				6507A1351C15906F00E6228F /* Frameworks */,
 				6507A1361C15906F00E6228F /* Resources */,
+				B854B5D1F7BE6A459275EFF5 /* [CP] Embed Pods Frameworks */,
+				FE5C0C9EBCFE32CC4A5D1D53 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,6 +425,7 @@
 			files = (
 				6509E79F1D48D65600CD9459 /* teeth.mp4 in Resources */,
 				6507A1271C15906E00E6228F /* LaunchScreen.storyboard in Resources */,
+				6571E6341E58A5B100388298 /* GoogleService-Info.plist in Resources */,
 				6507A1241C15906E00E6228F /* Assets.xcassets in Resources */,
 				6507A1221C15906E00E6228F /* Main.storyboard in Resources */,
 				651DC7781C2764AC0022B9AB /* Travel-Warning-min.png in Resources */,
@@ -389,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6571E6351E58A5B100388298 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,10 +444,149 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6571E6361E58A5B100388298 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7281CE18F86AC013E242F436 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		796CAC0506E69289DEE613BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeethReminder/Pods-TeethReminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EEA1615B3A31342C0D25BD5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeethReminder/Pods-TeethReminder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98F41D8C0801E10ED90D1DCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ABCCE4A0CC58786B7A233CFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeethReminderTests/Pods-TeethReminderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BBCA503EDDAB2DF70B7268 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B854B5D1F7BE6A459275EFF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeethReminderUITests/Pods-TeethReminderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB5A51C3302F07182D4D8E40 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeethReminderTests/Pods-TeethReminderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE5C0C9EBCFE32CC4A5D1D53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TeethReminderUITests/Pods-TeethReminderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6507A1151C15906E00E6228F /* Sources */ = {
@@ -587,6 +774,7 @@
 		};
 		6507A1421C15906F00E6228F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CC1475A307A97CFFF2CC8CE /* Pods-TeethReminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -604,6 +792,7 @@
 		};
 		6507A1431C15906F00E6228F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11D9217F7B15D020D5191E37 /* Pods-TeethReminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -621,6 +810,7 @@
 		};
 		6507A1451C15906F00E6228F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83485D4F3905A112ED0D0833 /* Pods-TeethReminderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TeethReminderTests/Info.plist;
@@ -634,6 +824,7 @@
 		};
 		6507A1461C15906F00E6228F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67B1F0724135CC95D3AAF214 /* Pods-TeethReminderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TeethReminderTests/Info.plist;
@@ -647,6 +838,7 @@
 		};
 		6507A1481C15906F00E6228F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB880FF3FF596D09B08A5CB4 /* Pods-TeethReminderUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TeethReminderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -660,6 +852,7 @@
 		};
 		6507A1491C15906F00E6228F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B9906EC643E08CED3C7BBBC /* Pods-TeethReminderUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TeethReminderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 open class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -26,6 +27,16 @@ open class SetTimeViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.timePicker.dataSource = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // tracking
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            kFIRParameterItemName: "openSetTimeView" as NSObject
+            ])
     }
     
     open func refresh(){

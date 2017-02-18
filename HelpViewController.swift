@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 open class HelpViewController: UIViewController {
 
@@ -15,8 +16,20 @@ open class HelpViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
     }
+    
+    
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // tracking
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            kFIRParameterItemName: "openHelpView" as NSObject
+            ])
+    }
+    
+    
     @IBAction func touchDownOkButton(_ sender: OkButtonView) {
         sender.highlight=true
         sender.setNeedsDisplay()
